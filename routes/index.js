@@ -1,34 +1,9 @@
+"use strict"
 var express = require('express');
 var router = express.Router();
 var pgp = require('pg-promise')();
 
-let pgUser = 'postgres';
-let pgPass = 'postgres';
-let pgHost = 'localhost';
-let pgPort = 5432
-let pgDatabase = 'comt';
-
-if (process.env.POSTGRES_HOST) {
-  pgHost = process.env.POSTGRES_HOST;
-}
-
-if (process.env.POSTGRES_PORT) {
-  pgPort = process.env.POSTGRES_PORT;
-}
-
-if (process.env.POSTGRES_USER) {
-  pgUser = process.env.POSTGRES_USER;
-}
-
-if (process.env.POSTGRES_PASSWORD) {
-  pgPass = process.env.POSTGRES_PASSWORD;
-}
-
-if (process.env.POSTGRES_DB) {
-  pgDatabase = process.env.POSTGRES_DB;
-}
-
-var db = pgp(`postgres://${pgUser}:${pgPass}@${pgHost}:${pgPort}/${pgDatabase}`);
+const connectionstring = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}`;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -47,6 +22,7 @@ router.get('/contact-us', function(req, res, next) {
 
 /* GET comt about page. */
 router.get('/comt', function(req, res, next) {
+	var db = pgp(connectionstring);
   db.many('SELECT title, SUBSTRING (overview, 0, 280) as overview FROM projects ORDER BY id ASC', [true])
   .then(function (data) {
     res.render('comt/index', {
@@ -60,6 +36,7 @@ router.get('/comt', function(req, res, next) {
 
 /* GET comt projects page. */
 router.get('/comt/projects/:project', function(req, res, next) {
+	var db = pgp(connectionstring);
   var projectTitle = req.params.project.replace(/-/g, '');
   var allDatasets = require('../public/comt_datasets');
   var projectDatasets = [];
@@ -91,6 +68,7 @@ router.get('/comt/projects/:project', function(req, res, next) {
 
 /* GET comt dataset page. */
 router.get('/comt/projects/:project/:dataset', function(req, res, next) {
+	var db = pgp(connectionstring);
   var datasetTitle = req.params.dataset,
       datasets = require('../public/comt_datasets'),
       variables = {},
