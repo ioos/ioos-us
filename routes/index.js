@@ -1,21 +1,22 @@
 "use strict"
 const express = require('express');
 const router = express.Router();
+const title = 'The U.S. Integrated Ocean Observing System (IOOS) | ';
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'The U.S. Integrated Ocean Observing System (IOOS)' });
+  res.render('index', { title: title.substr(0, title.length - 3)});
 });
 
 /* GET region map page. */
 router.get('/regions', function(req, res, next) {
-  res.render('regions', { title: 'The U.S. Integrated Ocean Observing System (IOOS) | Regions Map' });
+  res.render('regions', { title: title + 'Regions Map' });
 });
 
 /* GET contact us page. */
 router.get('/contact-us', function(req, res, next) {
-  res.render('contact-us', { title: 'The U.S. Integrated Ocean Observing System (IOOS) | Contact Us' });
+  res.render('contact-us', { title: title + 'Contact Us' });
 });
 
 /* GET comt about page. */
@@ -30,7 +31,7 @@ router.get('/comt', function(req, res, next) {
     });
   });
   res.render('comt/index', {
-    title: 'The U.S. Integrated Ocean Observing System (IOOS) | Coastal and Ocean Modeling Testbed Projects',
+    title: title + 'Coastal and Ocean Modeling Testbed Projects',
     projects: projectSnippets });
   });
 
@@ -64,7 +65,7 @@ router.get('/comt/projects/:title_key', function(req, res, next) {
     }
   });
   res.render('comt/project', {
-    title: 'The U.S. Integrated Ocean Observing System (IOOS) | Coastal and Ocean Modeling Testbed Projects | ' + project.title,
+    title: title + 'Coastal and Ocean Modeling Testbed Projects | ' + project.title,
     data: {
       projectTitles: projectTitles,
       project: project
@@ -109,7 +110,7 @@ router.get('/comt/projects/:title_key/:dataset', function(req, res, next) {
     }
   });
   res.render('comt/dataset', {
-    title: 'The U.S. Integrated Ocean Observing System (IOOS) | Coastal and Ocean Modeling Testbed Projects | ' + projectTitle + ' | Datasets',
+    title: title + 'Coastal and Ocean Modeling Testbed Projects | ' + projectTitle + ' | Datasets',
     dataset: dataset,
     projectTitle: projectTitle,
     title_key: req.params.title_key,
