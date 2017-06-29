@@ -1,0 +1,19 @@
+extends layout
+
+block body
+  div#main-container.container.surf-cam
+    div.row
+      div.col-md-12
+        h2 Live Surf Camera
+        p Surfline and IOOS have joined forces to bring you a literal eye on the ocean.
+        p Under a cooperative research and development agreement, or CRADA, signed in 2017, Surfline began mounting live surf cameras on high-frequency radar installations within the U.S. IOOS network along the Atlantic coast. This public-private partnership teams up existing resources on both sides to expand the utility of the radar installations and the information available to Surfline users.
+        p The first installation to receive a camera was along the New Jersey coast with more cameras being added in the future.
+        p The embedded video below is streaming from one of the CRADA locations. To see more Surfline cameras, <a href='http://www.surfline.com/home/index.cfm' target='_blank'>click here</a>, or to learn more about IOOS' high-frequency radar work, <a href='https://ioos.noaa.gov/project/hf-radar/' target='_blank'>click here</a>.
+    div.row
+      div.col-md-12.text-center
+        iframe( width='640',
+                height='360',
+                src='http://e.cdn-surfline.com/syndication/embed/v1/player.html?id=144653',
+                frameborder='0',
+                scrolling='no',
+                allowfullscreen)

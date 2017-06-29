@@ -11,6 +11,10 @@
   header > .container-fluid {
     display: none;
   }
+
+  a.surf-cam {
+    background-size: 100%;
+  }
 }
 
 header > .container-fluid {
@@ -359,9 +363,6 @@ button#search-data-button.btn.btn-default.open span::before
     margin-top: 33%;
   }
 
-  a.grid-item.mbon .tile-wrap h1 {
-    margin-top: 75%;
-  }
   a.grid-item.regional-associations .tile-wrap h1 {
     margin-top: 33%;
   }
@@ -382,7 +383,6 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   a.mbon {
-    background-position : -321px;
     background-size     : cover;
   }
 
@@ -393,6 +393,10 @@ button#search-data-button.btn.btn-default.open span::before
 
   a.grid-item.twoxone.data-demo-center {
     background-size: 125%;
+  }
+
+  #main-container.surf-cam {
+    margin-top: 0;
   }
 }
 
@@ -489,6 +493,10 @@ a.ioos-eds:hover {
 
 a.mbon {
   background-image    : url("/images/demonstrations-tile.jpg");
+}
+
+a.surf-cam {
+  background-image    : url("/images/surf-cam.png");
 }
 
 a.data-demo-center {

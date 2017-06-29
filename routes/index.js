@@ -19,6 +19,11 @@ router.get('/contact-us', function(req, res, next) {
   res.render('contact-us', { title: title + 'Contact Us' });
 });
 
+/* GET surf cam page. */
+router.get('/surf-cam', function(req, res, next) {
+  res.render('surf-cam', { title: title + 'Live Surf Camera' });
+});
+
 /* GET comt about page. */
 router.get('/comt', function(req, res, next) {
   const projects = require('../public/comt_projects').projects;
