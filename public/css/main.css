@@ -657,6 +657,10 @@ footer > .container > .row > .col-md-3 a:hover {
   padding-top: 50px;
 }
 
+footer path {
+  fill: #003087;
+}
+
 /*  BEGIN regions map */
 
 .point {
