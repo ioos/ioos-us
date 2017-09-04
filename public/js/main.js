@@ -79,7 +79,7 @@ $(function() {
     });
     if (valid)
       $.ajax({
-        url   : 'http://feedback.ioos.us/?SiteID=1&Name=' + $('#feedback-name').val() + '&Email=' + $('#feedback-email').val() + '&Comment=' + $('#feedback-comment').val(),
+        url   : 'https://feedback.ioos.us/?SiteID=1&Name=' + $('#feedback-name').val() + '&Email=' + $('#feedback-email').val() + '&Comment=' + $('#feedback-comment').val(),
         type  : 'POST',
         success: function (data) {
           alert('Feedback Submitted');
