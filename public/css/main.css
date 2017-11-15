@@ -355,7 +355,7 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   a.grid-item.ioos-eds .tile-wrap h1,
-  a.grid-item.glider-dac .tile-wrap h1, 
+  a.grid-item.glider-dac .tile-wrap h1,
   a.grid-item.atn .tile-wrap h1 {
     margin-top: 13%;
   }
@@ -520,7 +520,7 @@ a.hf-radar {
 }
 
 a.atn {
-  background-image    : url("/images/atn.png");
+  background-image    : url("/images/ATN.png");
   background-size     : 125%;
 }
 
@@ -579,7 +579,7 @@ iframe.twitter-timeline {
 #feedbackForm .form-group {
     margin-bottom: 0;
     }
-    
+
  #feedbackForm .form-group span.glyphicon {
      visibility: hidden;
     }
