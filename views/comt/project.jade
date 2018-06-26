@@ -35,7 +35,7 @@ block body
         - subCount++
         - currentTitle = data.project.title
     else
-      - nav += '<li><a href="/comt/projects/' + project.title_key + '">' + project.title + '</a></li>'
+      - nav += '<li><a href="/projects/' + project.title_key + '">' + project.title + '</a></li>'
 
     - subCount = 0
   - nav += '</ul></nav></div>'
@@ -45,7 +45,7 @@ block body
     div.row
       ol.breadcrumb
         li
-          a(href='/comt')= 'Coastal and Ocean Modeling Testbed'
+          a(href='/')= 'Coastal and Ocean Modeling Testbed'
         li.active
           !{currentTitle}
     div.row

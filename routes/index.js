@@ -4,10 +4,29 @@ const router = express.Router();
 const title = 'The U.S. Integrated Ocean Observing System (IOOS) | ';
 const path = require('path');
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: title.substr(0, title.length - 3)});
+  var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
+  // If we come in with comt.ioos.us or comt.localhost:3000 sent to comt page.
+  if (fullUrl.includes('comt.')) {
+    const projects = require('../public/comt_projects').projects;
+    const projectSnippets = [];
+    projects.forEach((project) => {
+      projectSnippets.push({
+        title: project.title,
+        overview: project.overview ? project.overview.text.substr(0, 280) : null,
+        title_key: project.title_key
+      });
+    });
+    res.render('comt/index', {
+      title: title + 'Coastal and Ocean Modeling Testbed Projects',
+      projects: projectSnippets 
+    });
+  } else {
+    // Render normal root page. 
+    res.render('index', { title: title.substr(0, title.length - 3)});
+  }
 });
 
 /* GET region map page. */
@@ -25,24 +44,13 @@ router.get('/surf-cam', function(req, res, next) {
   res.render('surf-cam', { title: title + 'Live Surf Camera' });
 });
 
-/* GET comt about page. */
+/* Redirect to comt.ioos.us if coming from /comt */
 router.get('/comt', function(req, res, next) {
-  const projects = require('../public/comt_projects').projects;
-  const projectSnippets = [];
-  projects.forEach((project) => {
-    projectSnippets.push({
-      title: project.title,
-      overview: project.overview ? project.overview.text.substr(0, 280) : null,
-      title_key: project.title_key
-    });
-  });
-  res.render('comt/index', {
-    title: title + 'Coastal and Ocean Modeling Testbed Projects',
-    projects: projectSnippets });
-  });
+  res.redirect(301, 'https://comt.ioos.us');
+});
 
 /* GET comt projects page. */
-router.get('/comt/projects/:title_key', function(req, res, next) {
+router.get('/projects/:title_key', function(req, res, next) {
   const projects = require('../public/comt_projects').projects;
   const datasets = require('../public/comt_datasets').datasets;
   const projectTitles = [];
@@ -84,7 +92,7 @@ router.get('/comt/projects/:title_key', function(req, res, next) {
 });
 
 /* GET comt dataset page. */
-router.get('/comt/projects/:title_key/:dataset', function(req, res, next) {
+router.get('/projects/:title_key/:dataset', function(req, res, next) {
   const datasetTitle = req.params.dataset;
   const projects = require('../public/comt_projects').projects;
   const datasets = require('../public/comt_datasets').datasets;
@@ -126,7 +134,7 @@ router.get('/comt/projects/:title_key/:dataset', function(req, res, next) {
 });
 
 /* GET comt model viewer redirect. */
-router.get('/comt/model_viewer', function(req, res, next) {
+router.get('/model_viewer', function(req, res, next) {
   res.writeHead(301,
     {Location: 'http://oceansmap.com/comt/'}
   );
@@ -134,7 +142,7 @@ router.get('/comt/model_viewer', function(req, res, next) {
 });
 
 /* GET comt pr_inundation gifs */
-router.get('/comt/projects/pr_inundation/georges/2016/05/:filename', function(req, res, next) {
+router.get('/projects/pr_inundation/georges/2016/05/:filename', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../public/images/comt/', req.params.filename));
 });
 
