@@ -1,0 +1,42 @@
+dist: xenial
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  # pull the docker alpine image
+  - docker pull node:13.7.0-alpine
+
+  # ensure grunt and yarn are installed
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - npm install -g grunt
+
+# disallow cache and build clean every time
+cache:
+  npm: false
+  yarn: false
+
+# define what to do, when
+jobs:
+  # send finish notification ASAP
+  fast_finish: true
+  include:
+    - language: node_js
+
+# the installation step of each job
+install:
+  #  build the image
+  - docker build -t ioos-us . --no-cache
+
+  # build "locally" as well, serves as additional test
+  - yarn
+  - grunt
+
+# script step of each job
+script:
+  # launch the container
+  - docker run -d -p 3000:000 ioos-node
+
+# TODO deploy: on merge into master, push image to Dockerhub
