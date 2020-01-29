@@ -1,5 +1,7 @@
 dist: xenial
 language: node_js
+  - node_js:
+    - 10.6.0
 
 services:
   - docker
@@ -9,7 +11,7 @@ before_install:
   - docker pull node:13.7.0-alpine
 
   # ensure grunt and yarn are installed
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 10.6.0
   - export PATH="$HOME/.yarn/bin:$PATH"
   - npm install -g grunt
 
@@ -37,6 +39,6 @@ install:
 # script step of each job
 script:
   # launch the container
-  - docker run -d -p 3000:000 ioos-node
+  - docker run -d -p 3000:000 ioos-us
 
 # TODO deploy: on merge into master, push image to Dockerhub
