@@ -3,36 +3,44 @@ The homepage for http://ioos.us/
 
 ## Building the project
 
-1. Download and install nodejs (which comes with npm)
-2. Install the project nodeJS dependencies
-   ```
-   npm install
-   ```
+### Local Build
 
-3. Install the project bower dependencies. If you have bower installed as a command line tool, which is highly recommended.
-   ```
-   bower install
-   ```
+0. Download and install nodejs (which comes with npm) using your package manager
+0. Install `yarn` using your package manager. Instructions can be found [here](https://legacy.yarnpkg.com/en/docs/install/).
 
-   Otherwise, you can run bower through the local packages
+0. Use `npm` to install `grunt`
 
-   ```
-   node_modules/bower/bin/bower install
-   ```
+```
+$ npm install -g grunt
+```
 
-3. To run the project
-   ```
-   DEBUG=ioos-us:* npm start
-   ```
+0. Use `yarn` to install the package and its dependencies:
 
-## Running in Production
+```
+$ yarn
+```
 
-1. Compile all of the static assets
-   ```
-   grunt
-   ```
+0. Following a successful installation, use `grunt` to compile static elements.
 
-2. Launch the web application
-   ```
-   NODE_ENV=production ./bin/www
-   ```
+```
+$ grunt
+```
+
+0. To run the project:
+
+```
+$ DEBUG=ioos-us:*
+$ node bin/www
+```
+
+### Docker build
+
+The Docker build is far simpler:
+
+```
+$ docker build -t <tag> -f Dockerfile .
+```
+
+__NOTE__: ensure that `public/lib` is removed *before* building. If it exists,
+`yarn` will attempt to use the existing one in the Docker build, breaking the symlink
+in the container and lead to ugly CSS.

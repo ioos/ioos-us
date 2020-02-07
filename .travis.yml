@@ -1,0 +1,30 @@
+dist: xenial
+language: node_js
+  - node_js:
+    - 10.6.0
+
+services:
+  - docker
+
+before_install:
+  # pull the docker alpine image
+  - docker pull node:13.7.0-alpine
+
+# define what to do, when
+jobs:
+  # send finish notification ASAP
+  fast_finish: true
+  include:
+    - language: node_js
+
+# the installation step of each job
+install:
+  #  build the image
+  - docker build -t ioos-us . --no-cache
+
+# script step of each job
+script:
+  # launch the container
+  - docker run -d -p 3000:000 ioos-us
+
+# TODO deploy: on merge into master, push image to Dockerhub

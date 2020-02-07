@@ -1,31 +1,26 @@
-FROM debian:jessie
-MAINTAINER Luke Campbell <luke.campbell@rpsgroup.com>
+FROM node:13.7.0-alpine
+LABEL maintainer="devops@rpsgroup.com"
 
-ENV NODE_VERSION 7.9.0
-ENV GOSU_VERSION 1.9
-ENV SCRIPTS_DIR /opt/build_scripts
-
-RUN mkdir -p $SCRIPTS_DIR
-RUN useradd -m node
-
-COPY contrib/scripts/ $SCRIPTS_DIR/
-
-RUN sed -i '/jessie-updates/d' /etc/apt/sources.list  # Now archived
-
-RUN $SCRIPTS_DIR/install-deps.sh
-RUN $SCRIPTS_DIR/install-node.sh
 COPY bin /opt/ioos-us/bin
 COPY public /opt/ioos-us/public
 COPY routes /opt/ioos-us/routes
 COPY views /opt/ioos-us/views
-COPY .bowerrc app.js assets.json bower.json gruntfile.js package.json /opt/ioos-us/
+COPY app.js assets.json gruntfile.js package.json /opt/ioos-us/
 
+# install yarn, grunt; remove build cache
+RUN apk update && \
+    apk add yarn && \
+    npm install -g grunt && \
+    rm -rf /var/cache/apk/*
+
+# change directory, install and grunt
 WORKDIR /opt/ioos-us
-RUN chown -R node:node /opt/ioos-us && \
-    npm install && \
-    /usr/local/bin/gosu node node_modules/bower/bin/bower install && \
-    /usr/local/bin/gosu node node_modules/grunt-cli/bin/grunt
+RUN yarn && \
+    /usr/local/lib/node_modules/grunt/bin/grunt
 
 ENV NODE_ENV production
 
-CMD ["/usr/local/bin/gosu", "node", "bin/www"]
+# don't run as root
+USER node
+
+CMD ["node", "bin/www"]
