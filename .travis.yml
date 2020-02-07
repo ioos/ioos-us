@@ -27,4 +27,4 @@ script:
   # launch the container
   - docker run -d -p 3000:000 ioos-us
 
-# TODO deploy: on merge into master, push image to Dockerhub
+# TODO deploy: on merge into master, push to Dockerhub
