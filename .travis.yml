@@ -10,16 +10,6 @@ before_install:
   # pull the docker alpine image
   - docker pull node:13.7.0-alpine
 
-  # ensure grunt and yarn are installed
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 10.6.0
-  - export PATH="$HOME/.yarn/bin:$PATH"
-  - npm install -g grunt
-
-# disallow cache and build clean every time
-cache:
-  npm: false
-  yarn: false
-
 # define what to do, when
 jobs:
   # send finish notification ASAP
@@ -31,10 +21,6 @@ jobs:
 install:
   #  build the image
   - docker build -t ioos-us . --no-cache
-
-  # build "locally" as well, serves as additional test
-  - yarn
-  - grunt
 
 # script step of each job
 script:
