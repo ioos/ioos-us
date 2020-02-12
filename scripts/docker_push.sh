@@ -15,5 +15,5 @@ else
 fi
 
 echo "Tagging image with: $image_release_tag"
-docker tag "ioos-us:latest" "rpsdevopsdocker/ioos-us:$image_release_tag"
+docker tag "ioos-us:latest" "ioos-us/ioos-us:$image_release_tag"
 docker push "ioos/ioos-us:$image_relase_tag"
