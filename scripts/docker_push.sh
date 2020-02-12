@@ -3,7 +3,7 @@
 # Dockerhub login
 [ ! -z "$DOCKER_PASSWORD" ] || [ ! -z "$DOCKER_USERNAME" ];
   echo "DOCKER_USERNAME and DOCKER_PASSWORD must be set as environment variables!";
-  exit;
+  exit 1;
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 # if the build is for a pushed tag, use that tag for the Docker image;
