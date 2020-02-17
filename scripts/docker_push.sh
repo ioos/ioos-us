@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Dockerhub login
-if [[ ! -n "$DOCKER_PASSWORD" || ! -n "$DOCKER_USERNAME" ]] >&2; then
-  echo "DOCKER_USERNAME and DOCKER_PASSWORD must be set as environment variables!"
+if [[ ! -n "$DOCKER_PASSWORD" || ! -n "$DOCKER_USERNAME" ]]; then
+  echo "DOCKER_USERNAME and DOCKER_PASSWORD must be set as environment variables!" >&2
   exit 1
 else
-  docker login -u "$DOCKER_USERNAME" --password-stdin <<< "$DOCKER_PASSWORD" >&2
+  docker login -u "$DOCKER_USERNAME" --password-stdin <<< "$DOCKER_PASSWORD"
 
   if [[ $? -ne 0 ]]; then
     exit 1
