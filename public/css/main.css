@@ -365,7 +365,7 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   a.grid-item.regional-associations .tile-wrap h1 {
-    margin-top: 80%;
+    margin-top: 33%;
   }
 
   a.grid-item.demonstrations .tile-wrap h1 {
@@ -378,8 +378,13 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   a.grid-item.hf-radar .tile-wrap h1 {
+    margin-top: 38%;
+  }
+
+  a.grid-item.video-portal .tile-wrap h1 {
     margin-top: 16%;
   }
+
 
   .grid-item.ioos-eds .tile-wrap h1,
   .grid-item.sensor-map .tile-wrap h1,
@@ -516,7 +521,12 @@ a.data-demo-center {
 
 a.hf-radar {
   background-image    : url("/images/codar-combined-TX_RX_2_2.jpg");
-  background-size     : 150%;
+  background-size     : 215%;
+}
+
+a.video-portal {
+  background-image    : url("/images/video_portal.png");
+  background-size     : 100%;
 }
 
 a.atn {
