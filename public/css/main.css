@@ -576,13 +576,13 @@ a.video-portal {
 }
 
 a.data-discovery {
-  background-image    : url("/images/new-data-catalog.jpg");
-  background-size     : 100%;
+  background-image    : url("/images/new-data-catalog-lightmap.png");
+  background-size     : 112%;
 }
 
 a.regional-associations {
-  background-image    : url("/images/r-a-tile-2.png");
-  background-size     : 134%;
+  background-image    : url("/images/r-a-tile-3.jpg");
+  background-size     : 100%;
 }
 
 a.metrics span.glyphicon-signal,
