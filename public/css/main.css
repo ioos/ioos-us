@@ -546,8 +546,8 @@ a.surf-cam {
 }
 
 a.data-demo-center {
-  background-image      : url("/images/data-demo-center.png");
-  background-size       : 122%;
+  background-image      : url("/images/ioos_CodeLab.png");
+  background-size       : 100%;
 }
 
 a.hf-radar {
