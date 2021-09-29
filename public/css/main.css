@@ -73,6 +73,7 @@ header {
   width   : 100%;
   z-index : 1;
   background-color: #fff;
+  z-index: 99;
 }
 
 .navbar-default .navbar-nav .dropdown-menu {
