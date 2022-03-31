@@ -357,7 +357,6 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   a.grid-item.ioos-eds .tile-wrap h1,
-  a.grid-item.glider-dac .tile-wrap h1,
   a.grid-item.atn .tile-wrap h1 {
     margin-top: 13%;
   }
@@ -404,18 +403,12 @@ button#search-data-button.btn.btn-default.open span::before
   }
 
   .grid-item.ioos-eds .tile-wrap h1,
-  .grid-item.sensor-map .tile-wrap h1,
-  .grid-item.glider-dac .tile-wrap h1 {
+  .grid-item.sensor-map .tile-wrap h1 {
     font-size:  26px;
   }
 
   a.mbon {
     background-size     : cover;
-  }
-
-  a.glider-dac {
-    background-size     : 100%;
-    background-position : 0 -32px;
   }
 
   a.grid-item.twoxone.data-demo-center {
@@ -516,8 +509,15 @@ a.grid-item {
 
 a.glider-dac {
   background-image      : url("/images/glider.png");
-  background-size       : 134%;
-  background-position-y : -55px;
+  background-size       : 150%;
+  background-position-y : -20px;
+  background-position-x : -20px;
+}
+
+a.sanct-sound {
+  background-image      : url("/images/sanct-sound.png");
+  background-size       : 100%;
+  background-position-y : -35px;
 }
 
 a.sensor-map {
@@ -582,8 +582,10 @@ a.data-discovery {
 }
 
 a.regional-associations {
-  background-image    : url("/images/r-a-tile-3.jpg");
-  background-size     : 100%;
+    background-image: url("/images/r-a-tile-3.jpg");
+    background-size: 110%;
+    background-position-y: -13px;
+    background-position-x: -23px;
 }
 
 a.metrics span.glyphicon-signal,
