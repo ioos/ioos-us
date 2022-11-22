@@ -17,6 +17,11 @@
   }
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 header > .container-fluid {
   width: 500px;
 }
@@ -1156,10 +1161,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-model-viewer > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-model-viewer > button > a {
+  color: #ffffff;
 }
 
 /* START .sanct-sound */
@@ -1226,10 +1234,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-sanct-sound > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-sanct-sound > button > a {
+  color: #ffffff;
 }
 
 /* START .sensor-map */
@@ -1296,10 +1307,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-sensor-map > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-sensor-map > button > a {
+  color: #ffffff;
 }
 
 /* START .data-discovery */
@@ -1366,10 +1380,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-data-discovery > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-data-discovery > button > a {
+  color: #ffffff;
 }
 
 /* START .atn */
@@ -1436,10 +1453,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-atn > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-atn > button > a {
+  color: #ffffff;
 }
 
 /* START .glider-dac */
@@ -1506,10 +1526,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-glider-dac > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-glider-dac > button > a {
+  color: #ffffff;
 }
 
 /* START .hf-radar */
@@ -1576,10 +1599,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-hf-radar > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-hf-radar > button > a {
+  color: #ffffff;
 }
 
 /* START .regional-associations */
@@ -1646,10 +1672,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-regional-associations > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-regional-associations > button > a {
+  color: #ffffff;
 }
 
 /* START .ioos-by-numbers */
@@ -1716,10 +1745,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-ioos-by-numbers > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-ioos-by-numbers > button > a {
+  color: #ffffff;
 }
 
 /* START .compliance-checker */
@@ -1786,10 +1818,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-compliance-checker > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-compliance-checker > button > a {
+  color: #ffffff;
 }
 
 /* START .mbon */
@@ -1856,10 +1891,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-mbon > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-mbon > button > a {
+  color: #ffffff;
 }
 
 /* START .comt */
@@ -1926,10 +1964,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-comt > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-comt > button > a {
+  color: #ffffff;
 }
 
 /* START .video-portal */
@@ -1996,10 +2037,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-video-portal > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-video-portal > button > a {
+  color: #ffffff;
 }
 
 /* START .code-lab */
@@ -2066,10 +2110,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-code-lab > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-code-lab > button > a {
+  color: #ffffff;
 }
 
 /* START .osmc */
@@ -2136,10 +2183,13 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-osmc > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-osmc > button > a {
+  color: #ffffff;
 }
 
 /* START .oa */
@@ -2206,8 +2256,11 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-oa > button {
   padding: 10px 30px;
   background-color: #003087;
-  color: #55D6F8;
   font-size: 16px;
   border: none;
   border-radius: 10px;
+}
+
+.flip-box-back-oa > button > a {
+  color: #ffffff;
 }
