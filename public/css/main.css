@@ -2264,3 +2264,102 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 .flip-box-back-oa > button > a {
   color: #ffffff;
 }
+
+@media screen and (max-width: 992px) {
+  .flip-box {
+    padding: 15px;
+  }
+  .flip-box-front-model-viewer > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-sanct-sound {
+    padding: 15px;
+  }
+  .flip-box-front-sanct-sound > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-sensor-map {
+    padding: 15px;
+  }
+  .flip-box-front-sensor-map > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-data-discovery {
+    padding: 15px;
+  }
+  .flip-box-front-data-discovery > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-atn {
+    padding: 15px;
+  }
+  .flip-box-front-atn > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-glider-dac {
+    padding: 15px;
+  }
+  .flip-box-front-glider-dac > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-hf-radar {
+    padding: 15px;
+  }
+  .flip-box-front-hf-radar > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-regional-associations {
+    padding: 15px;
+  }
+  .flip-box-front-regional-associations > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-ioos-by-numbers {
+    padding: 15px;
+  }
+  .flip-box-front-ioos-by-numbers > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-compliance-checker {
+    padding: 15px;
+  }
+  .flip-box-front-compliance-checker > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-mbon {
+    padding: 15px;
+  }
+  .flip-box-front-mbon > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-comt {
+    padding: 15px;
+  }
+  .flip-box-front-comt > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-video-portal {
+    padding: 15px;
+  }
+  .flip-box-front-video-portal > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-code-lab {
+    padding: 15px;
+  }
+  .flip-box-front-code-lab > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-osmc {
+    padding: 15px;
+  }
+  .flip-box-front-osmc > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-oa {
+    padding: 15px;
+  }
+  .flip-box-front-oa > h1 {
+    margin-top: 38%;
+  }
+}
