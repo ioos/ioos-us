@@ -8,18 +8,17 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <div id="grid-container" class="container">
   <div class="container">
-    <div class="row">
-      
-      <div class="col-md-12" style="padding-bottom: 8px;">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-md-offset-3" style="padding-bottom: 8px;">
         <!-- <button id="search-data-button" class="btn btn-default open" type="button" data-toggle="collapse" data-target="#search-input-collapse" aria-expanded="false" aria-controls="search-input-collapse">
           <span>Search IOOS Data</span>
         </button> -->
         <div id="search-input-collapse">
           <div class="well search-bar">
-            <div class="col-md-3">
-              <p class="search-title">Search IOOS Data:</p>
+            <div class="col-md-6">
+              <p class="search-title">Search IOOS Data Catalog:</p>
             </div>
-            <div class="input-group col-md-9">
+            <div class="input-group col-md-6">
               <input type="text" class="form-control" placeholder="E.g. Environment" aria-describedby="basic-addon">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">
@@ -34,106 +33,221 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <!-- <div class="center-block"> -->
-        <div class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-item.onexone"}'>
-          <a class="grid-item twoxone ioos-eds" href="https://eds.ioos.us/">
-            <div class="tile-wrap">
-              <h1>IOOS Model Viewer</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone sanct-sound" href="#" target="_blank">
-            <div class="tile-wrap">
-              <h1>Sanctuary Soundscape <br />(SanctSound)</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone metrics orange" href="//ioos.noaa.gov/about/ioos-by-the-numbers/" target="_blank">
-            <div class="tile-wrap">
-              <h1>IOOS By The Numbers</h1>
-              <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
-            </div>
-          </a>
-          <a class="grid-item onexone glider-dac" href="https://gliders.ioos.us/">
-            <div class="tile-wrap">
-              <h1>Profiling Gliders</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone regional-associations orange" href="/regions">
-            <div class="tile-wrap">
-              <h1>Regional Associations</h1>
-            </div>
-          </a>
-          <a class="grid-item twoxone data-discovery aqua" href="https://data.ioos.us">
-            <div class="tile-wrap">
-              <h1>IOOS Data Catalog</h1>
-              <!-- <span class="glyphicon glyphicon-search" aria-hidden="true"></span> -->
-            </div>
-          </a>
-          <a class="grid-item twoxone sensor-map" href="https://sensors.ioos.us/">
-            <div class="tile-wrap">
-              <h1>Environmental Sensor Map</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone mbon" href="https://mbon.ioos.us">
-            <div class="tile-wrap">
-              <h1>Marine Biodiversity (MBON) Data</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone comt aqua" href="https://comt.ioos.us">
-            <div class="tile-wrap">
-              <h1>Coastal and Ocean Modeling Testbed</h1>
-            </div>
-          </a>
-          <a class="grid-item twoxone atn" href="//atn.ioos.us">
-            <div class="tile-wrap">
-              <h1>Animal Telemetry Network</h1>
-            </div>
-          </a>
-          <!-- <a class="grid-item onexone surf-cam" href="/surf-cam">
-            <div class="tile-wrap">
-              <h1>Live Surf Camera</h1>
-            </div>
-          </a> -->
-          <a class="grid-item onexone video-portal" href="https://video.ioos.us/">
-            <div class="tile-wrap">
-              <h1>Video Portal</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone data-demo-center" href="https://ioos.github.io/ioos_code_lab/content/intro.html" target="_blank">
-            <div class="tile-wrap">
-              <h1>CodeLab</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone hf-radar" href="//hfradar.ioos.us">
-            <div class="tile-wrap">
-              <h1>HF Radar</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone compliance-checker aqua" href="/compliance-checker">
-            <div class="tile-wrap">
-              <h1>Compliance Checker</h1>
-              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-            </div>
-          </a>
-          <a class="grid-item onexone osmc" href="//osmc.ioos.us">
-            <div class="tile-wrap">
-              <h1>NOAA Observing System Monitoring Center</h1>
-            </div>
-          </a>
-          <a class="grid-item onexone ocean-acidification" href="//oa.ioos.us">
-            <div class="tile-wrap">
-              <h1>Ocean Acidification</h1>
-            </div>
-          </a>
+      <!-- <h1 class="new-title">DATA AND VIEWERS</h1> -->
+      <div class="flip-box col-md-3 col-xs-6">
+        <div class="flip-box-inner-model-viewer new-design">
+          <div class="flip-box-front-model-viewer">
+            <h1>IOOS Model Viewer</h1>
+          </div>
+          <div class="flip-box-back-model-viewer">
+            <h2>IOOS Model Viewer</h2>
+            <p>The IOOS Model Viewer provides a platform for visualization and analysis of integrated model output.</p>
+            <button><a href="https://eds.ioos.us/">Learn More</a></button>
+          </div>
         </div>
-      <!-- </div> -->
+      </div>
+      <div class="flip-box-sanct-sound col-md-3 col-xs-6">
+        <div class="flip-box-inner-sanct-sound new-design">
+          <div class="flip-box-front-sanct-sound">
+            <h1>Sanctuary Soundscape <br>(SanctSound)</h1>
+          </div>
+          <div class="flip-box-back-sanct-sound">
+            <h2>Sanctuary Soundscape (SanctSound)</h2>
+            <p>NOAA and the U.S. Navy will work with partners to study sound within seven national marine sanctuaries and one marine national monument.</p>
+            <button><a href="https://sanctsound.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-sensor-map col-md-3 col-xs-6">
+        <div class="flip-box-inner-sensor-map new-design">
+          <div class="flip-box-front-sensor-map">
+            <h1>Environmental Sensor Map</h1>
+          </div>
+          <div class="flip-box-back-sensor-map">
+            <h2>Environmental Sensor Map</h2>
+            <p>The Environmental Sensor Map integrates regional, national, and global real-time (past 4-hours) data across the IOOS enterprise.</p>
+            <button><a href="https://sensors.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-data-discovery col-md-3 col-xs-6">
+        <div class="flip-box-inner-data-discovery new-design">
+          <div class="flip-box-front-data-discovery">
+            <h1>IOOS Data Catalog</h1>
+          </div>
+          <div class="flip-box-back-data-discovery">
+            <h2>IOOS Data Catalog</h2>
+            <p>The IOOS Catalog is the master inventory of IOOS datasets and data access services provided by our network of 11 Regional Associations, functional data assembly centers (DACs), and federal partners.</p>
+            <button><a href="https://data.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 col-md-offset-1">
+    <div class="col-md-12">
+      <div class="flip-box-atn col-md-3 col-xs-6">
+        <div class="flip-box-inner-atn new-design">
+          <div class="flip-box-front-atn">
+            <h1>Animal Telemetry <br>Network</h1>
+          </div>
+          <div class="flip-box-back-atn">
+            <h2>Animal Telemetry Network</h2>
+            <p>The ATN data management vision includes a regionally distributed data collection, management and sharing capacity that builds on and integrates as many existing data links as possible.</p>
+            <button><a href="https://atn.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-glider-dac col-md-3 col-xs-6">
+        <div class="flip-box-inner-glider-dac new-design">
+          <div class="flip-box-front-glider-dac">
+            <h1>Profiling Gliders</h1>
+          </div>
+          <div class="flip-box-back-glider-dac">
+            <h2>Profiling Gliders</h2>
+            <p>The mission of the Glider DAC is to provide glider operators with a simple process for submitting glider data sets to a centralized location.</p>
+            <button><a href="https://gliders.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-hf-radar col-md-3 col-xs-6">
+        <div class="flip-box-inner-hf-radar new-design">
+          <div class="flip-box-front-hf-radar">
+            <h1>HF Radar</h1>
+          </div>
+          <div class="flip-box-back-hf-radar">
+            <h2>HF Radar</h2>
+            <p>IOOS operates the nation’s only high-frequency (HF) radar network, providing real-time information on the speed and direction of surface currents.</p>
+            <button><a href="https://hfradar.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-regional-associations col-md-3 col-xs-6">
+        <div class="flip-box-inner-regional-associations new-design">
+          <div class="flip-box-front-regional-associations">
+            <h1>Regional Portals</h1>
+          </div>
+          <div class="flip-box-back-regional-associations">
+            <h2>Regional Portals</h2>
+            <p>Click here to view an interactive map of all of IOOS regional associations.</p>
+            <button><a href="https://ioos.us/regions">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="flip-box-ioos-by-numbers col-md-3 col-xs-6">
+        <div class="flip-box-inner-ioos-by-numbers new-design">
+          <div class="flip-box-front-ioos-by-numbers">
+            <h1>IOOS By The <br>Numbers</h1>
+          </div>
+          <div class="flip-box-back-ioos-by-numbers">
+            <h2>IOOS By The Numbers</h2>
+            <p>U.S. IOOS® is a vital tool for tracking, predicting, managing, and adapting to changes in our ocean, coastal and Great Lakes environment.</p>
+            <button><a href="https://ioos.noaa.gov/about/ioos-by-the-numbers/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-compliance-checker col-md-3 col-xs-6">
+        <div class="flip-box-inner-compliance-checker new-design">
+          <div class="flip-box-front-compliance-checker">
+            <h1>Compliance Checker</h1>
+          </div>
+          <div class="flip-box-back-compliance-checker">
+            <h2>Compliance Checker</h2>
+            <p>The objective of the IOOS Compliance Checker is to check your file against our interpretation of select dataset metadata standards to use as a guideline in generating compliant files.</p>
+            <button><a href="https://ioos.us/compliance-checker">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-mbon col-md-3 col-xs-6">
+        <div class="flip-box-inner-mbon new-design">
+          <div class="flip-box-front-mbon">
+            <h1>Marine Biodiversity (MBON) Data</h1>
+          </div>
+          <div class="flip-box-back-mbon">
+            <h2>Marine Biodiversity (MBON) Data</h2>
+            <p>Search and download real-time, delayed-mode, and historical data for in situ and remotely-sensed physical, chemical, and biological observations.</p>
+            <button><a href="https://mbon.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-comt col-md-3 col-xs-6">
+        <div class="flip-box-inner-comt new-design">
+          <div class="flip-box-front-comt">
+            <h1>Coastal and Ocean Modeling Testbed</h1>
+          </div>
+          <div class="flip-box-back-comt">
+            <h2>Coastal and Ocean Modeling Testbed</h2>
+            <p>The COMT serves as a conduit between the federal operational and research communities and allows sharing of numerical models, observations and software tools.</p>
+            <button><a href="https://comt.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="flip-box-video-portal col-md-3 col-xs-6">
+        <div class="flip-box-inner-video-portal new-design">
+          <div class="flip-box-front-video-portal">
+            <h1>Video Portal</h1>
+          </div>
+          <div class="flip-box-back-video-portal">
+            <h2>Video Portal</h2>
+            <p>This portal contains video and photography of the seafloor and aerial imagery along much of the coastal U.S.</p>
+            <button><a href="https://video.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-code-lab col-md-3 col-xs-6">
+        <div class="flip-box-inner-code-lab new-design">
+          <div class="flip-box-front-code-lab">
+            <h1>CodeLab</h1>
+          </div>
+          <div class="flip-box-back-code-lab">
+            <h2>CodeLab</h2>
+            <p>The IOOS CodeLab is a collection of tutorials and examples of how to access and utilize the many IOOS technologies and data sources available.</p>
+            <button><a href="https://ioos.github.io/ioos_code_lab/content/intro.html">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-osmc col-md-3 col-xs-6">
+        <div class="flip-box-inner-osmc new-design">
+          <div class="flip-box-front-osmc">
+            <h1>Observing System Monitoring Center</h1>
+          </div>
+          <div class="flip-box-back-osmc">
+            <h2>Observing System Monitoring Center</h2>
+            <p>This project exists to join the discrete “networks” of global in situ ocean observing platforms -- ships, surface floats, profiling floats, tide gauges, etc. – into a single, integrated system.</p>
+            <button><a href="https://osmc.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="flip-box-oa col-md-3 col-xs-6">
+        <div class="flip-box-inner-oa new-design">
+          <div class="flip-box-front-oa">
+            <h1>Ocean Acidification</h1>
+          </div>
+          <div class="flip-box-back-oa">
+            <h2>Ocean Acidification</h2>
+            <p>IOOS, in collaboration with NOAA’s Ocean Acidification Program (OAP), is making real-time ocean acidification data more accessible.</p>
+            <button><a href="https://oa.ioos.us/">Learn More</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-3 col-xs-6">
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/usioosgov" data-widget-id="711944329313574912">Tweets by @usioosgov</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 col-xs-6">
       <div class="fb-page" data-href="https://www.facebook.com/usioosgov" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-height="600" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/usioosgov"><a href="https://www.facebook.com/usioosgov">U.S. Integrated Ocean Observing System</a></blockquote></div></div>
     </div>
   </div>
