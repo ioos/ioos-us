@@ -2265,6 +2265,79 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
   color: #ffffff;
 }
 
+/* START .sanctuary-watch */
+
+.flip-box-sanctuary-watch {
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-box-inner-sanctuary-watch {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-sanctuary-watch:hover .flip-box-inner-sanctuary-watch {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front-sanctuary-watch, .flip-box-back-sanctuary-watch {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front-sanctuary-watch {
+  background-image: url("/images/sanctuary-watch.png");
+  color: #fff;
+  background-repeat: no-repeat;
+  box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
+  background-size: cover;
+}
+
+.flip-box-front-sanctuary-watch > h1 {
+  margin-top: 50%;
+  font-size: 22px;
+}
+
+.flip-box-back-sanctuary-watch {
+  background-image: url("/images/sanctuary-watch.png");
+  color: #fff;
+  background-repeat: no-repeat;
+  box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.flip-box-back-sanctuary-watch > h2 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.flip-box-back-sanctuary-watch > p {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.flip-box-back-sanctuary-watch > button {
+  padding: 10px 30px;
+  background-color: #003087;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+}
+
+.flip-box-back-sanctuary-watch > button > a {
+  color: #ffffff;
+}
+
 @media screen and (max-width: 992px) {
   .flip-box {
     padding: 15px;
@@ -2360,6 +2433,12 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
     padding: 15px;
   }
   .flip-box-front-oa > h1 {
+    margin-top: 38%;
+  }
+  .flip-box-sanctuary-watch {
+    padding: 15px;
+  }
+  .flip-box-front-sanctuary-watch > h1 {
     margin-top: 38%;
   }
 }
