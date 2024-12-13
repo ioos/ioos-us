@@ -4,7 +4,7 @@ module.exports = {
   entry: './index.js',
   output: {
     filename: 'ioos-ui-components.min.js',
-    path: path.resolve(__dirname, '../public/lib/ioos-components/'),
+    path: path.resolve(__dirname, '../static/'),
     publicPath: '/build/', // Ensure publicPath is correctly set for HMR
   },
   devServer: {

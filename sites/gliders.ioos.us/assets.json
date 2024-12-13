@@ -1,0 +1,24 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "IOOS National Glider DAC",
+        "template": "sites/gliders.ioos.us/views/index.pug"
+      },
+      "benefits": {
+        "title": "Benefits",
+        "template": "sites/gliders.ioos.us/views/benefits.pug"
+      },
+      "metrics": {
+        "title": "Metrics",
+        "template": "sites/gliders.ioos.us/views/metrics.pug"
+      }
+    },
+    "css": [
+        "sites/gliders.ioos.us/css/main.css"
+    ],
+    "js": [
+      "sites/gliders.ioos.us/js/main.js"
+    ]
+  }
+}

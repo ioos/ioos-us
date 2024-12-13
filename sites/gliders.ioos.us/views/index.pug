@@ -1,10 +1,12 @@
-block content
+extends ../../../views/layout
+
+block body
   #main-container.homepage.container
     .row
       .col-md-3.welcome
         .rounded-shadow
           a(href="//www.ioos.noaa.gov/glider/welcome.html")
-            img(src="/images/flying_glider.jpg", alt="IOOS Gliders")
+            img(src="images/flying_glider.jpg", alt="IOOS Gliders")
 
       .col-md-9
         .caption.caption-header
@@ -30,32 +32,32 @@ block content
             | and historical glider missions dating back to 2005 from
 
             a(href="https://gcoos.org/", target="_blank")
-              | Gulf of Mexico (GCOOS),
+              | &nbsp;Gulf of Mexico (GCOOS),
 
             a(href="https://sccoos.org/", target="_blank")
-              | Southern California (SCCOOS),
+              | &nbsp;Southern California (SCCOOS),
 
             a(href="https://nanoos.org/", target="_blank")
-              | Northern Pacific (NANOOS),
+              | &nbsp;Northern Pacific (NANOOS),
 
             a(href="https://cencoos.org/", target="_blank")
-              | Central and Northern California (CeNCOOS),
+              | &nbsp;Central and Northern California (CeNCOOS),
 
             a(href="https://glos.us/", target="_blank")
-              | Great Lakes (GLOS),
+              | &nbsp;Great Lakes (GLOS),
 
             a(href="https://maracoos.org/", target="_blank")
-              | Mid-Atlantic (MARACOOS), and the
+              | &nbsp;Mid-Atlantic (MARACOOS), and the
 
             a(href="https://www.aoml.noaa.gov/", target="_blank")
-              | Atlantic Oceanographic and Meteorological Lab (AOML). The gliders displayed have been funded by U.S. IOOS, NOAA, ONR, NSF, EPA, various universities, state agencies, and industries.
+              | &nbsp;Atlantic Oceanographic and Meteorological Lab (AOML). The gliders displayed have been funded by U.S. IOOS, NOAA, ONR, NSF, EPA, various universities, state agencies, and industries.
 
     .row
       .col-md-12
         a(href="https://gliders.ioos.us/map/", target="_blank")
           #helper-overlay
             p Click here to see the map
-          img.img-responsive(src="https://gliders.ioos.us/images/ioos-map-screen-capture.png", alt="IOOS Gliders Map screen capture")
+          img.img-responsive(src="images/ioos-map-screen-capture.png", alt="IOOS Gliders Map screen capture")
 
     .row
       .section-heading

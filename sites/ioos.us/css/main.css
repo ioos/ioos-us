@@ -38,7 +38,7 @@ header > .container-fluid {
   margin-bottom: 0;
 }
 
-.navbar img[src="/images/logo-navbar.png"]  {
+.navbar img[src="../images/logo-navbar.png"]  {
   max-height: 42px;
   margin-top: -11px;
 }
@@ -332,7 +332,7 @@ button#search-data-button.btn.btn-default.open span::before
     display: inline-block;
   }
 
-  .navbar img[src="/images/logo-navbar.png"] {
+  .navbar img[src="../images/logo-navbar.png"] {
     margin-top: -6px;
   }
 
@@ -513,24 +513,24 @@ a.grid-item {
 }
 
 a.glider-dac {
-  background-image      : url("/images/glider.png");
+  background-image      : url("../images/glider.png");
   background-size       : 150%;
   background-position-y : -20px;
   background-position-x : -20px;
 }
 
 a.sanct-sound {
-  background-image      : url("/images/sanct-sound.png");
+  background-image      : url("../images/sanct-sound.png");
   background-size       : 100%;
   background-position-y : -35px;
 }
 
 a.sensor-map {
-  background-image      : url("/images/all-stations-new.png");
+  background-image      : url("../images/all-stations-new.png");
 }
 
 a.ioos-eds {
-  background-image      : url("/images/ioos-eds.png");
+  background-image      : url("../images/ioos-eds.png");
   color                 : #51565D;
 }
 
@@ -539,55 +539,55 @@ a.ioos-eds:hover {
 }
 
 a.mbon {
-  background-image    : url("/images/demonstrations-tile.jpg");
+  background-image    : url("../images/demonstrations-tile.jpg");
 }
 
 a.comt {
-  background-image    : url("/images/comt-tile.png");
+  background-image    : url("../images/comt-tile.png");
   background-size     : cover;
 }
 
 a.surf-cam {
-  background-image    : url("/images/surf-cam.png");
+  background-image    : url("../images/surf-cam.png");
 }
 
 a.data-demo-center {
-  background-image      : url("/images/ioos_CodeLab.png");
+  background-image      : url("../images/ioos_CodeLab.png");
   background-size       : 100%;
 }
 
 a.hf-radar {
-  background-image    : url("/images/codar-combined-TX_RX_2_2.jpg");
+  background-image    : url("../images/codar-combined-TX_RX_2_2.jpg");
   background-size     : 215%;
 }
 
 a.osmc {
-  background-image    : url("/images/osmc-tile.png");
+  background-image    : url("../images/osmc-tile.png");
   background-size     : 155%;
 }
 
 a.ocean-acidification {
-  background-image    : url("/images/ocean-acidification.png");
+  background-image    : url("../images/ocean-acidification.png");
   background-size     : 235%;
 }
 
 a.atn {
-  background-image    : url("/images/ATN.png");
+  background-image    : url("../images/ATN.png");
   background-size     : 125%;
 }
 
 a.video-portal {
-  background-image    : url("/images/video_portal.png");
+  background-image    : url("../images/video_portal.png");
   background-size     : 134%;
 }
 
 a.data-discovery {
-  background-image    : url("/images/new-data-catalog-lightmap.png");
+  background-image    : url("../images/new-data-catalog-lightmap.png");
   background-size     : 112%;
 }
 
 a.regional-associations {
-    background-image: url("/images/r-a-tile-3.jpg");
+    background-image: url("../images/r-a-tile-3.jpg");
     background-size: 110%;
     background-position-y: -13px;
     background-position-x: -23px;
@@ -623,7 +623,7 @@ iframe.twitter-timeline {
 
 #feedback{
   border:0px solid #fff;
-  background:#660000 url('/images/feedback-tab-left.png') top left no-repeat;
+  background:#660000 url('../images/feedback-tab-left.png') top left no-repeat;
   width:36px;
   height:100px;
   position:fixed;
@@ -658,7 +658,7 @@ iframe.twitter-timeline {
 footer {
   font-family         : Roboto, sans-serif;
   background-color    : #020E38;
-  background-image    : url("/images/bg_footer.png");
+  background-image    : url("../images/bg_footer.png");
   background-position : top center;
   background-repeat   : no-repeat;
   background-size     : cover;
@@ -732,7 +732,7 @@ footer > .container > .row > .col-md-3 a:hover {
 }
 
 #footer-col-4 {
-  background-image    : url("/images/logo-ioos-white.png");
+  background-image    : url("../images/logo-ioos-white.png");
   background-position : 0 50px;
   background-repeat   : no-repeat;
   background-size     : 72px;
@@ -939,7 +939,7 @@ nav.nav-list {
     background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
 
-.comt img[src="/images/comt/comt-screenshot.jpg"] {
+.comt img[src="../images/comt/comt-screenshot.jpg"] {
   margin-top: 4%;
 }
 
@@ -1014,7 +1014,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 /* START IOOS-US 2022 redesign */
 
 .model-viewer {
-  background-image      : url("/images/ioos-eds.png");
+  background-image      : url("../images/ioos-eds.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1022,7 +1022,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .sensor-map {
-  background-image      : url("/images/all-stations-new.png");
+  background-image      : url("../images/all-stations-new.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1030,7 +1030,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .sanct-sound {
-  background-image      : url("/images/sanct-sound.png");
+  background-image      : url("../images/sanct-sound.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1038,7 +1038,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .hf-radar {
-  background-image    : url("/images/codar-combined-TX_RX_2_2.jpg");
+  background-image    : url("../images/codar-combined-TX_RX_2_2.jpg");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1046,7 +1046,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .regional-associations {
-  background-image: url("/images/r-a-tile-3.jpg");
+  background-image: url("../images/r-a-tile-3.jpg");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1054,7 +1054,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .atn {
-  background-image    : url("/images/ATN.png");
+  background-image    : url("../images/ATN.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1062,7 +1062,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .glider-dac {
-  background-image      : url("/images/glider.png");
+  background-image      : url("../images/glider.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1070,7 +1070,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .data-discovery {
-  background-image    : url("/images/new-data-catalog-lightmap.png");
+  background-image    : url("../images/new-data-catalog-lightmap.png");
   height: 300px;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1127,7 +1127,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-model-viewer {
-  background-image      : url("/images/ioos-eds.png");
+  background-image      : url("../images/ioos-eds.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1140,7 +1140,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-model-viewer {
-  background-image      : url("/images/ioos-eds.png");
+  background-image      : url("../images/ioos-eds.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1200,7 +1200,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-sanct-sound {
-  background-image      : url("/images/sanct-sound.png");
+  background-image      : url("../images/sanct-sound.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1213,7 +1213,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-sanct-sound {
-  background-image      : url("/images/sanct-sound.png");
+  background-image      : url("../images/sanct-sound.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1273,7 +1273,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-sensor-map {
-  background-image      : url("/images/all-stations-new.png");
+  background-image      : url("../images/all-stations-new.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1286,7 +1286,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-sensor-map {
-  background-image      : url("/images/all-stations-new.png");
+  background-image      : url("../images/all-stations-new.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1346,7 +1346,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-data-discovery {
-  background-image    : url("/images/new-data-catalog-lightmap.png");
+  background-image    : url("../images/new-data-catalog-lightmap.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1359,7 +1359,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-data-discovery {
-  background-image    : url("/images/new-data-catalog-lightmap.png");
+  background-image    : url("../images/new-data-catalog-lightmap.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1419,7 +1419,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-atn {
-  background-image    : url("/images/ATN.png");
+  background-image    : url("../images/ATN.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1432,7 +1432,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-atn {
-  background-image    : url("/images/ATN.png");
+  background-image    : url("../images/ATN.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1492,7 +1492,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-glider-dac {
-  background-image      : url("/images/glider.png");
+  background-image      : url("../images/glider.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1505,7 +1505,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-glider-dac {
-  background-image      : url("/images/glider.png");
+  background-image      : url("../images/glider.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1565,7 +1565,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-hf-radar {
-  background-image    : url("/images/codar-combined-TX_RX_2_2.jpg");
+  background-image    : url("../images/codar-combined-TX_RX_2_2.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1578,7 +1578,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-hf-radar {
-  background-image    : url("/images/codar-combined-TX_RX_2_2.jpg");
+  background-image    : url("../images/codar-combined-TX_RX_2_2.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1638,7 +1638,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-regional-associations {
-  background-image: url("/images/r-a-tile-3.jpg");
+  background-image: url("../images/r-a-tile-3.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1651,7 +1651,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-regional-associations {
-  background-image: url("/images/r-a-tile-3.jpg");
+  background-image: url("../images/r-a-tile-3.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1711,7 +1711,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-ioos-by-numbers {
-  background-image: url("/images/ioos-by-the-numbers-22.png");
+  background-image: url("../images/ioos-by-the-numbers-22.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1724,7 +1724,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-ioos-by-numbers {
-  background-image: url("/images/ioos-by-the-numbers-22.png");
+  background-image: url("../images/ioos-by-the-numbers-22.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1784,7 +1784,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-compliance-checker {
-  background-image: url("/images/compliance-checker.png");
+  background-image: url("../images/compliance-checker.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1797,7 +1797,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-compliance-checker {
-  background-image: url("/images/compliance-checker.png");
+  background-image: url("../images/compliance-checker.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1857,7 +1857,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-mbon {
-  background-image: url("/images/demonstrations-tile.jpg");
+  background-image: url("../images/demonstrations-tile.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1870,7 +1870,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-mbon {
-  background-image: url("/images/demonstrations-tile.jpg");
+  background-image: url("../images/demonstrations-tile.jpg");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -1930,7 +1930,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-comt {
-  background-image: url("/images/comt-tile.png");
+  background-image: url("../images/comt-tile.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -1943,7 +1943,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-comt {
-  background-image: url("/images/comt-tile.png");
+  background-image: url("../images/comt-tile.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -2003,7 +2003,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-video-portal {
-  background-image: url("/images/video_portal.png");
+  background-image: url("../images/video_portal.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -2016,7 +2016,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-video-portal {
-  background-image: url("/images/video_portal.png");
+  background-image: url("../images/video_portal.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -2076,7 +2076,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-code-lab {
-  background-image: url("/images/ioos_CodeLab.png");
+  background-image: url("../images/ioos_CodeLab.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -2089,7 +2089,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-code-lab {
-  background-image: url("/images/ioos_CodeLab.png");
+  background-image: url("../images/ioos_CodeLab.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -2149,7 +2149,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-osmc {
-  background-image: url("/images/osmc-tile.png");
+  background-image: url("../images/osmc-tile.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -2162,7 +2162,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-osmc {
-  background-image: url("/images/osmc-tile.png");
+  background-image: url("../images/osmc-tile.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);
@@ -2222,7 +2222,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-front-oa {
-  background-image: url("/images/ocean-acidification.png");
+  background-image: url("../images/ocean-acidification.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
@@ -2235,7 +2235,7 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
 }
 
 .flip-box-back-oa {
-  background-image: url("/images/ocean-acidification.png");
+  background-image: url("../images/ocean-acidification.png");
   color: #fff;
   background-repeat: no-repeat;
   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.8);

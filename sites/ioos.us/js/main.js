@@ -6,10 +6,10 @@ $(function() {
       if (scroll > 50) {
         $('header > div > a').css('visibility', 'hidden');
         $('header').css('position', 'fixed');
-        if ($('body').width() > 768) {
-            $('header').css('top', '-50px');
-            $('#grid-container, #main-container.comt-projects').css('margin-top', '200px');
-        }
+        // if ($('body').width() > 768) {
+        //     $('header').css('top', '-50px');
+        //     $('#grid-container, #main-container.comt-projects').css('margin-top', '200px');
+        // }
       } else {
         $('header > div > a').css('visibility', 'visible');
           $('header').css({'position':'static','top':'0'});
