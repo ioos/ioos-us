@@ -44,6 +44,7 @@ app.locals.assets = assets;
 app.use(ua.middleware('UA-78530076-1', {cookieName: '_ga'}));
 
 app.use(function (req, res, next) {
+  res.locals.siteConfig = SITE_CONFIG;
   if (req.visitor) {
     req.visitor.pageview(req.url).send();
   }

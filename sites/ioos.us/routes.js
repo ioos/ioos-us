@@ -25,12 +25,4 @@ router.get('/comt', function(req, res, next) {
   res.redirect(301, 'https://comt.ioos.us');
 });
 
-/* GET comt model viewer redirect. */
-router.get('/comt/model_viewer', function(req, res, next) {
-  res.writeHead(301,
-    {Location: 'http://oceansmap.com/comt/'}
-  );
-  res.end();
-});
-
 module.exports = router;
