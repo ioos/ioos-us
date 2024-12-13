@@ -1,4 +1,4 @@
-<div id="fb-root"></div>
+<!-- layout.pug--><!DOCTYPE html><html lang="en"><head><title>The U.S. Integrated Ocean Observing System (IOOS)</title><meta name="viewport" content="width-device-width" initial-scale="1"><script src="/ioos-ui-components.min.js"></script><script src="/js/main.min.js"></script><link rel="stylesheet" href="/css/main.min.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab" type="text/css"></head><body><ioos-header></ioos-header><div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -6,7 +6,6 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<script src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js" defer></script>
 <div id="grid-container" class="container">
   <div class="container">
     <div class="row justify-content-center">
@@ -241,3 +240,4 @@
     </div>
   </div>
 </div>
+<a class="hidden-xs" href="" id="feedback"></a><div class="modal fade" id="feedbackForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">title</h4></div><div class="modal-body"><div class="well"><div class="form-group has-feedback"><textarea class="form-control" id="feedback-comment" rows="6" placeholder="Comment or suggestion (required)" maxlength="500" aria-describedby="inputError2Status"></textarea><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span></div></div><div class="well"><div class="form-group has-feedback"><input class="form-control" id="feedback-name" type="text" placeholder="Your name" maxlength="50" aria-describedby="inputError2Status"><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span></div></div><div class="well"><div class="form-group has-feedback"><input class="form-control" id="feedback-email" type="email" placeholder="Your e-mail address" aria-describedby="inputError2Status"><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span></div></div></div><div class="modal-footer"><input class="btn btn-primary" type="submit" value="Submit"></div></div></div></div><ioos-footer></ioos-footer></body></html>

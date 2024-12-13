@@ -15,11 +15,6 @@ router.get('/regions', function(req, res, next) {
   res.render('regions', { title: title + 'Regions Map' });
 });
 
-/* GET contact us page. */
-router.get('/contact-us', function(req, res, next) {
-  res.render('contact-us', { title: title + 'Contact Us' });
-});
-
 /* GET surf cam page. */
 router.get('/surf-cam', function(req, res, next) {
   res.render('surf-cam', { title: title + 'Live Surf Camera' });
@@ -36,11 +31,6 @@ router.get('/comt/model_viewer', function(req, res, next) {
     {Location: 'http://oceansmap.com/comt/'}
   );
   res.end();
-});
-
-/* GET Compliance Checker landing page */
-router.get('/compliance-checker', function(req, res, next) {
-  res.render('compliance-checker', { title: title + 'Compliance Checker' });
 });
 
 module.exports = router;
