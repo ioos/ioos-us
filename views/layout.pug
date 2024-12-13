@@ -4,6 +4,12 @@ html(lang="en")
   head
     title= title
     meta(name="viewport", content="width-device-width", initial-scale="1")
+    
+    if env === 'development'
+      script(src="/lib/ioos-components/ioos-ui-components.min.js")
+    else
+      script(src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js")
+    
     link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css", type="text/css")
     link(rel="stylesheet", href="/lib/font-awesome/css/font-awesome.min.css", type="text/css")
     each css in assets.main.css
@@ -11,7 +17,6 @@ html(lang="en")
     block css
     link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto', type='text/css')
     link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto+Slab', type='text/css')
-    script(src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js", defer)
     each js in assets.main.js
       script(type="text/javascript", src=js)
     block js

@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 /* GET region map page. */
 router.get('/regions', function(req, res, next) {
-  res.render('regions', { title: title + 'Regions Map' });
+  res.render('../sites/ioos.us/views/regions', { title: title + 'Regions Map' });
 });
 
 /* GET surf cam page. */
