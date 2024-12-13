@@ -1,8 +1,9 @@
 .DS_Store
 *.swp
 node_modules/
-static
+static/*
 npm-debug.log
-public/build/
-public/lib/
-public/lib
+
+
+
+!static/ioos-ui-components.min.js
