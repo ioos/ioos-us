@@ -1,0 +1,16 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "Example Template",
+        "template": "sites/example.template/views/index.pug"
+      },
+      "example-page": {
+        "title": "Example Page",
+        "template": "sites/example.template/views/example-page.pug"
+      }
+    },
+    "css": ["sites/example.template/css/main.css"],
+    "js": ["sites/example.template/js/main.js"]
+  }
+}

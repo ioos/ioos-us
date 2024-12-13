@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nodemon --watch views --watch sites --watch assets.json --watch build.js --ext pug,json,js,css,html --exec 'node build.js'",
+    "build": "nodemon --watch views --watch sites --watch css --watch js --watch assets.json --watch build.js --ext pug,json,js,css,html --exec 'node build.js'",
     "start": "concurrently \"npm run build --watch\" \"npm run serve\"",
     "serve": "browser-sync start --server static --files 'static/**/*' --no-ui"
   },
@@ -33,6 +33,7 @@
     "fizzy-ui-utils": "^2.0.7",
     "fs-extra": "^11.2.0",
     "get-size": "^2.0.2",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "uglify-js": "^3.19.3"
   }
 }
