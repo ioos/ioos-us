@@ -7,7 +7,16 @@ var bodyParser = require('body-parser');
 var assetmanager = require('assetmanager');
 var ua = require('universal-analytics');
 
-var routes = require('./routes/index');
+
+require('dotenv').config();
+
+const SITE_CONFIG = process.env.SITE_CONFIG;
+if (!SITE_CONFIG) {
+  console.error('Error: Missing required environment variable SITE_CONFIG.');
+  process.exit(1); // Exit the application with a failure code
+}
+
+var routes = require(`./sites/${SITE_CONFIG}/routes.js`);
 
 var app = express();
 
