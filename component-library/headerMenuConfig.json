@@ -7,7 +7,7 @@
             { "title": "Animal Telemetry Network", "url": "https://atn.ioos.us/"},
             { "title": "Glider DAC", "url": "https://gliders.ioos.us/"},
             { "title": "HF Radar DAC", "url": "https://hfradar.ioos.us/"},
-            { "title": "IOOS Archive Data Portal", "url": "https://www.ncei.noaa.gov/access/integrated-ocean-observing-system/)"}
+            { "title": "IOOS Archive Data Portal", "url": "https://www.ncei.noaa.gov/access/integrated-ocean-observing-system"}
         ]
     },
     {
@@ -48,7 +48,7 @@
         "items": [
             { "title": "IOOS CodeLab", "url": "https://ioos.github.io/ioos_code_lab/content/intro.html" },
             { "title": "Compliance Checker", "url": "https://compliance.ioos.us"},
-            { "title": "About IOOS", "url": "https://ioos.noaa.gov" },
+            { "title": "About IOOS", "url": "https://ioos.noaa.gov/about/about-us/" },
             { "title": "IOOS By the Numbers", "url": "https://ioos.noaa.gov/about/ioos-by-the-numbers" }
         ]
     }

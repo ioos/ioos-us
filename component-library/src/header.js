@@ -42,9 +42,7 @@ class HeaderComponent extends HTMLElement {
             <style>${bootstrapStyles} ${headerStyles}</style>
             <header>
                 <div class="ioos-top-header">
-                    <a href="https://ioos.noaa.gov">
-                        <img src="https://ioos.us/images/IOOS_Emblem_Tertiary_B_RGB.png" class="img-fluid" />
-                    </a>
+                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
                 </div>
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">

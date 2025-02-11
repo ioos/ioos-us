@@ -8,16 +8,13 @@
 }
 
 .ioos-top-header {
-    height: 75px;
-}
-
-.ioos-top-header a {
     text-align: center;
     display: block;
+    height: 75px;
     width: 100%;
 }
 
-.ioos-top-header a img {
+.ioos-top-header img {
     max-width: 480px;
     margin: 10px;
 }

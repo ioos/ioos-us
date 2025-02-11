@@ -1,16 +1,26 @@
-import footerStyles from './footer.css';
-import bootstrapStyles from './bootstrap.min.css';
+import footerStyles from "./footer.css";
+import bootstrapStyles from "./bootstrap.min.css";
 class FooterComponent extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${footerStyles}</style>
             <footer>
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-4 col-sm-12">
+                        <div class="footer-col-1 col-md-4 col-sm-12">
+                            <h4>IOOS Homepage</h4>
+                            <div>
+                                <div class="social fb" style="margin-bottom: .5em;">
+                                    <a href="https://ioos.noaa.gov/" target="_blank">
+                                        <img class="ioos-social" src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-social.png"></img>
+                                        <span class="txt">ioos.noaa.gov</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
                             <h4>Our Social Ocean</h4>
                             <div>
                                 <div class="social fb" style="margin-bottom: .5em;">
@@ -32,30 +42,28 @@ class FooterComponent extends HTMLElement {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1 col-sm-3">
-                            <img src="https://ioos.us/images/logo-ioos-white.png" class="img-fluid" />
-                        </div>
-                        <div class="col-md-4 col-sm-9">
-                            <div itemscope itemtype="http://schema.org/GovernmentOrganization">
-                                <p itemprop="name">U.S. Integrated Ocean Observing System Program</p>
-                                <p itemprop="address">1315 East-West Highway<br>SSMC3, 2nd Floor<br>Silver Spring, MD 20910</p>
-                                <p itemprop="telephone"><a href="tel:240-533-9444"> (240) 533-9444</a></p>
+                        <div class="footer-col-2 col-md-8 col-sm-12">
+                            <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/logo-ioos-white.png"/>
+                            <div class="content">
+                                <p>U.S. Integrated Ocean Observing System Program</p>
+                                <p>1315 East-West Highway<br>SSMC3, 2nd Floor<br>Silver Spring, MD 20910</p>
+                                <p><a href="tel:240-533-9444"> (240) 533-9444</a></p>
+                                <a class="contact btn" href="mailto:webmaster.ioos.us@noaa.gov">
+                                    <span>Contact Us</span>
+                                </a>
                             </div>
-                            <a class="contact btn" href="mailto:webmaster.ioos.us@noaa.gov" itemprop="email">
-                                <span>Contact Us</span>
-                            </a>
                         </div>
                     </div>
                 </div>
             </footer>
         `;
-    }
+  }
 
-    connectedCallback() {
-        setTimeout(() => {
-            this.shadowRoot.host.style.visibility = 'visible';
-        }, 5);
-    }
+  connectedCallback() {
+    setTimeout(() => {
+      this.shadowRoot.host.style.visibility = "visible";
+    }, 5);
+  }
 }
 
-customElements.define('ioos-footer', FooterComponent);
+customElements.define("ioos-footer", FooterComponent);
