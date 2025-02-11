@@ -1,20 +1,22 @@
-// layout.pug
 doctype html
 html(lang="en")
   head
     title= title
-    meta(name="viewport", content="width-device-width", initial-scale="1")
+    meta(name="viewport", content="width=device-width", initial-scale="1")
+    
     if env === 'development'
       script(src="/ioos-ui-components.min.js")
     else
       script(src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js")
-      
-    script(src="/js/main.min.js")
-    link(rel="stylesheet", href="/css/main.min.css", type="text/css")
-    link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto', type='text/css')
-    link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto+Slab', type='text/css')
-  body
 
+    - var subdirPath = siteSubdirectory ? `/${siteSubdirectory}` : ''
+    
+    script(src=`${subdirPath}/js/main.min.js`)
+    link(rel="icon", href=`${subdirPath}/images/favicon.ico`, type="image/x-icon")
+    link(rel="stylesheet", href=`${subdirPath}/css/main.min.css`, type="text/css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Slab", type="text/css")
+  
+  body
     include ./header.pug
     block body
     include ./feedback.pug

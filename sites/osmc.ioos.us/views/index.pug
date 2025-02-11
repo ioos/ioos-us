@@ -1,0 +1,48 @@
+extends ../../../views/layout
+
+block body
+  #main-container.homepage.container
+    .row
+      .col-md-3.welcome
+        .rounded-shadow
+          img.img-responsive(src="images/osmc-tile.png", alt="IOOS OSMC")
+      .col-md-9
+        .caption.caption-header
+          h3 Observing System Monitoring Center (OSMC)
+          p The Observing System Monitoring Center (OSMC) project exists to join the discrete "networks" of global in situ ocean observing platforms -- ships, surface floats, profiling floats, tide gauges, etc. – into a single, integrated system.  The OSMC addresses this goal through capabilities in four areas: 1) it captures the real-time ocean data stream from the NOAA GTS downlink into a database, and makes those data available at minimal delay to scientific end users through easy-to-use, service-oriented techniques; 2) it utilizes these data to compute metrics, indices and indicators of effectiveness of the observing system (the scientifically useful data it produces); 3) it strives to integrate the community of delayed-mode data assembly centers under a unified set of data services; and 4) it provides real-time monitoring of the integrated networks of in situ platforms.  
+    hr
+    .row
+      .col-md-12
+        a(href="http://osmc.noaa.gov/Monitor/OSMC/OSMC.html", target="_blank")
+          img.img-responsive(src="images/osmc-home.png", alt="OSMC")
+    hr
+    .row
+      .section-heading
+        h1 OSMC Resources
+    .row
+      .col-sm-6.col-md-6
+        ul.nav.nav-pills.glider-resources
+          li.dropdown(role="presentation")
+            a#drop1.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | General Info
+            ul#menu1.dropdown-menu(aria-labelledby="drop1")
+              li
+                p The OSMC aims to reduce the barriers to interoperability by providing access to both real time GTS data and delayed mode data from the various platform DACs through a suite of standards-based services through the ERDDAP data platform. OSMC serves the real time data, ingested from the GTS and other sources, to the public as an integrated, easy-to-use stream.  The real time data are served out via Web Services using ERDDAP, and availability of the data is possible through several popular delivery formats that can be accessed through web browsers and popular desktop analysis tools.  Products also include standardized ISO (19115) metadata and maps (images) visualizing the data.  The OSMC project is also working to unify access to the quality controlled delayed-mode data from the individual platform assembly centers that comprise the global observing networks. OSMC is also involved, through it's work in the JCOMM Observations Coordination Group (OCG), in devising more modern and efficient ways to distribute near real time data via the Global Telecommunications System (GTS).
+
+      .col-sm-6.col-md-6
+        ul.nav.nav-pills.glider-resources
+          li.dropdown(role="presentation")
+            a#drop2.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | Data Visualization & Access
+            ul#menu2.dropdown-menu(aria-labelledby="drop2")
+              li
+                a(href="http://www.osmc.noaa.gov", target="_blank") OSMC home page
+              li.divider(role="separator")
+              li
+                a(href="http://osmc.noaa.gov/erddap/index.html", target="_blank") OSMC ERDDAP server
+              li.divider(role="separator")
+              li
+                a(href="http://osmc.noaa.gov/Monitor/OSMC/OSMC.html", target="_blank") OSMC Monitoring tool
+              li.divider(role="separator")
+              li
+                a(href="http://osmc.noaa.gov/Monitor/OSMC/gridded/OSMCRequest.html", target="_blank") OSMC Observing System Metrics

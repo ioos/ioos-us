@@ -1,0 +1,16 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "IOOS OSMC",
+        "template": "sites/osmc.ioos.us/views/index.pug"
+      }
+    },
+    "css": [
+        "sites/osmc.ioos.us/css/main.css",
+        "sites/osmc.ioos.us/css/infographic.css",
+        "sites/osmc.ioos.us/css/bootstrap.css"
+      ],
+    "js": ["sites/osmc.ioos.us/js/main.js"]
+  }
+}

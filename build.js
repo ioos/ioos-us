@@ -34,7 +34,7 @@ function loadAssets(site) {
 }
 
 // Compile Pug templates to HTML
-function compilePugTemplates(SITE_CONFIG, assets, siteAssets) {
+function compilePugTemplates(siteConfig, siteSubdirectory, assets, siteAssets) {
   const viewsDir = path.join(__dirname, 'views');
   const outputDir = path.join(__dirname, 'static');
 
@@ -52,7 +52,8 @@ function compilePugTemplates(SITE_CONFIG, assets, siteAssets) {
 
     try {
       const html = pug.renderFile(template, {
-        siteConfig: SITE_CONFIG,
+        siteConfig: siteConfig,
+        siteSubdirectory: siteSubdirectory,
         assets,
         env: process.env.NODE_ENV || 'production',
         title: siteAssets.main.routes[route].title ?? siteAssets.main.routes['index'].title
@@ -142,6 +143,7 @@ function copyDirectory(source, destination) {
 // Main build process
 function build() {
   const SITE_CONFIG = loadSiteConfig();
+  const SITE_SUBDIRECTORY = process.env.SITE_SUBDIRECTORY
 
   const assets = loadAssets();
   const siteAssets = loadAssets(SITE_CONFIG)
@@ -149,7 +151,7 @@ function build() {
   console.log('Starting build process...');
 
   // Compile Pug templates
-  compilePugTemplates(SITE_CONFIG, assets, siteAssets);
+  compilePugTemplates(SITE_CONFIG, SITE_SUBDIRECTORY, assets, siteAssets);
 
   // Combine and compile JavaScript
   const jsOutputPath = `static/js/main.min.js`;
@@ -164,6 +166,7 @@ function build() {
   const sourcePath = path.join(__dirname, `sites/${SITE_CONFIG}`);
   const destinationPath = path.join(__dirname, 'static');
 
+  copyDirectory(`images`, `${destinationPath}/images`);
   copyDirectory(`${sourcePath}/images`, `${destinationPath}/images`);
   copyDirectory(`${sourcePath}/css/fonts`, `${destinationPath}/fonts`);
 
