@@ -1,0 +1,60 @@
+name: Deploy Website
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_config:
+        description: 'Deploy Website'
+        required: true
+        default: 'ioos.us'
+        type: choice
+        options:
+          - ioos.us
+          - eds.ioos.us
+          - gliders.ioos.us
+          - hfradar.ioos.us
+          - oa.ioos.us
+          - osmc.ioos.us
+      site_subdirectory:
+        description: 'Deploy to Subdirectory'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  build:
+    name: Build ${{ github.event.inputs.site_config }}
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set environment variables
+        run: |
+          echo "SITE_CONFIG=${{ github.event.inputs.site_config }}" >> $GITHUB_ENV
+          echo "SITE_SUBDIRECTORY=${{ github.event.inputs.site_subdirectory }}" >> $GITHUB_ENV
+          echo "NODE_ENV=production" >> $GITHUB_ENV
+
+      - name: Run the build script
+        run: npm run build
+
+      # Upload to S3
+      - name: Configure AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'  # Modify based on your region
+
+      - name: Sync static directory to S3
+        run: |
+          aws s3 sync ./static s3://ioos-websites/${{ github.event.inputs.site_config }} --delete
