@@ -195,6 +195,10 @@ thead .ccorrection {
   font-family: FontAwesome;
 }
 
+.fb-page {
+  padding-bottom: 40px;
+}
+
 .submit-row {
   padding-top: 15px;
 }

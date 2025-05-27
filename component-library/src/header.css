@@ -10,19 +10,20 @@
 .ioos-top-header {
     text-align: center;
     display: block;
-    height: 75px;
+    height: 55px;
     width: 100%;
 }
 
 .ioos-top-header img {
     max-width: 480px;
-    margin: 10px;
+    height: inherit;
+    padding: 5px;
 }
 
 .navbar.navbar-expand-lg {
     background-color: #013087;
     padding: unset;
-    height: 60px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +49,7 @@
     color: #55d6f8;
     font-size: 18px;
     text-transform: uppercase;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 .navbar-brand {
