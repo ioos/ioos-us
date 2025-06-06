@@ -53,6 +53,14 @@ This will:
 - Automatically rebuild and reload when changes are detected
 - Serve the site locally at http://localhost:3000
 
+
+### Creating new subsite
+To create a new subsite, create a new folder under `/sites`
+
+`/sites/example.template` can be used as reference/scaffolding
+
+Update `./github/workflows/deploy-website.yml` to include your new website for deployment.
+
 ## Project Configuration
 
 ### Site Configuration
@@ -96,6 +104,3 @@ The workflow will:
 - Handle subdirectory deployments if specified
 
 
-###
-To create a new subsite, create a new folder under /sites
-`/sites/example.template` can be used as reference/scaffolding

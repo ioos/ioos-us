@@ -33,7 +33,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
@@ -48,14 +48,13 @@ jobs:
         run: npm run build
 
       - name: Configure AWS CLI
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-1'
 
       - name: Sync static directory to S3
-        # Add -{SUBDIRECTORY} suffix to the output directory name - if applicable.
         run: |
           DESTINATION="s3://ioos-websites/$SITE_CONFIG"
           if [ -n "$SITE_SUBDIRECTORY" ]; then
