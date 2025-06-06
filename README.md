@@ -76,6 +76,26 @@ The project uses Pug templates located in the `views/` directory. Templates can 
 - Global and site-specific assets
 - Environment variables
 
+## Deployment
+
+The project uses GitHub Actions for automated deployment.
+
+### Website Deployment
+
+The website deployment workflow (`deploy-website.yml`) handles deploying the main website and subsites to AWS S3. To deploy:
+
+1. Go to the "Actions" tab in GitHub
+2. Select "Deploy Website" workflow
+3. Choose the site configuration to deploy (e.g., ioos.us, eds.ioos.us, etc.)
+4. Optionally specify a subdirectory for deployment
+5. Click "Run workflow"
+
+The workflow will:
+- Build the selected site
+- Deploy the static files to the appropriate S3 bucket
+- Handle subdirectory deployments if specified
+
+
 ###
 To create a new subsite, create a new folder under /sites
 `/sites/example.template` can be used as reference/scaffolding

@@ -106,11 +106,6 @@ ioos-us/component-library/
 
 The header menu configuration can be customized by modifying the `headerMenuConfig.json` file.
 
-## Dependencies
-
-- Bootstrap (for styling and responsive design)
-- Webpack (for building and bundling)
-- Babel (for JavaScript transpilation)
 
 # Shadow DOM
 
@@ -125,3 +120,23 @@ This component uses Shadow DOM to encapsulate its internal structure and styles.
 ## Customizing Styles Inside Shadow DOM
 
 While Shadow DOM provides strong encapsulation, it also means that external styles cannot directly modify elements within the Shadow DOM. A style override parameter can be implemented for these components, however if the styling change is bug-related, you can report the issue.
+
+# Deployment
+
+The component library is deployed using a GitHub Actions workflow. The deployment process is automated and handles building, uploading to S3, and invalidating the CloudFront cache.
+
+## Deployment Process
+
+1. Go to the "Actions" tab in the GitHub repository
+2. Select "Deploy Component Library" workflow
+3. Click "Run workflow"
+
+The workflow will:
+- Build the component library using webpack
+- Upload the minified JavaScript file (`ioos-ui-components.min.js`) to S3
+- Upload the menu configuration file (`headerMenuConfig.json`) to S3
+- Invalidate the CloudFront cache for both files
+
+The deployed files will be available at:
+- JavaScript: `https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js`
+- Menu Config: `https://dgd6r9iiqa8y9.cloudfront.net/headerMenuConfig.json`
