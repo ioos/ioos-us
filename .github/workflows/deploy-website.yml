@@ -28,10 +28,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
 
@@ -47,14 +47,19 @@ jobs:
       - name: Run the build script
         run: npm run build
 
-      # Upload to S3
       - name: Configure AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'  # Modify based on your region
+          aws-region: 'us-east-1'
 
       - name: Sync static directory to S3
+        # Add -{SUBDIRECTORY} suffix to the output directory name - if applicable.
         run: |
-          aws s3 sync ./static s3://ioos-websites/${{ github.event.inputs.site_config }} --delete
+          DESTINATION="s3://ioos-websites/$SITE_CONFIG"
+          if [ -n "$SITE_SUBDIRECTORY" ]; then
+            DESTINATION="$DESTINATION-$SITE_SUBDIRECTORY"
+          fi
+          echo "Syncing to $DESTINATION"
+          aws s3 sync ./static "$DESTINATION" --delete

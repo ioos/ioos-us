@@ -1,0 +1,42 @@
+name: Deploy Component Library
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Build Component Library
+        run: |
+          cd component-library
+          npm install
+          npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 
+
+      - name: Upload files to S3
+        run: |
+          aws s3 cp static/ioos-ui-components.min.js s3://ioos-ui-components/ioos-ui-components.min.js
+          aws s3 cp component-library/headerMenuConfig.json s3://ioos-ui-components/headerMenuConfig.json
+
+      - name: Invalidate CloudFront cache for ioos-ui-components.min.js
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2206S5B6APN8V --paths "/ioos-ui-components.min.js"
+
+      - name: Invalidate CloudFront cache for headerMenuConfig.json
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2206S5B6APN8V --paths "/headerMenuConfig.json"
