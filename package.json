@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "body-parser": "~1.19.0",
-    "bootstrap": "^3.3.6",
+    "body-parser": "~1.20.3",
+    "bootstrap": "^3.4.1",
     "cookie-parser": "~1.4.5",
     "debug": "~4.1.1",
     "dotenv": "^16.4.7",
@@ -32,7 +32,7 @@
     "desandro-matches-selector": "^2.0.0",
     "ev-emitter": "^1.0.0",
     "fizzy-ui-utils": "^2.0.7",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^3.0.1",
     "get-size": "^2.0.2",
     "nodemon": "^3.1.7",
     "uglify-js": "^3.19.3"
