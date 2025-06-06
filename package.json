@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --watch views --watch sites --watch css --watch js --watch assets.json --watch build.js --ext pug,json,js,css,html --exec 'node build.js'",
-    "start": "concurrently \"npm run build --watch\" \"npm run serve\"",
+    "watch": "nodemon --watch views --watch sites --watch css --watch js --watch assets.json --watch build.js --ext pug,json,js,css,html --exec 'node build.js'",
+    "start": "concurrently \"npm run watch\" \"npm run serve\"",
     "serve": "browser-sync start --server static --files 'static/**/*' --no-ui",
     "build": "node build.js"
   },

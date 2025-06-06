@@ -1,50 +1,81 @@
-[![Build Status](https://travis-ci.com/ioos/ioos-us.svg?branch=master)](https://travis-ci.com/ioos/ioos-us)
+# IOOS US 
 
-# ioos-us
-The homepage for http://ioos.us/
+This repository contains the source code for the IOOS US website and subsites. 
 
-## Building the project
+Additionally, the IOOS [Component Library](./component-library/) is found in this repo [here](./component-library/)
 
-### Local Build
-
-1. Download and install nodejs (which comes with npm) using your package manager
-2. Install `yarn` using your package manager. Instructions can be found [here](https://legacy.yarnpkg.com/en/docs/install/).
-
-3. Use `npm` to install `grunt`
+## Project Structure
 
 ```
-$ npm install -g grunt
+.
+├── sites/           # Site-specific configurations and assets
+├── css/             # Global CSS files
+├── js/              # Global JavaScript files
+├── images/          # Global images
+├── build.js         # Build script
+└── assets.json      # Global asset configuration
 ```
 
-4. Use `yarn` to install the package and its dependencies:
+## Setup
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
+3. Create a `.env` file in the root directory with the following variables:
+   ```
+   SITE_CONFIG=website_config_to_use
+   ```
+
+   `SITE_CONFIG` refers to the directory name to use found in `/sites`
+   example: This will run the project for the ioos.us subsite.
+   ```
+   SITE_CONFIG=ioos.us
+   ```
+
+## Development
+
+The project includes several npm scripts for development:
+
+- `npm run dev`: Starts the development server with hot-reloading
+- `npm run start`: Builds the project and serves it with live reload
+- `npm run serve`: Serves the static files with browser-sync
+- `npm run build`: Builds the project once
+
+To start development:
+
+```bash
+npm run start
 ```
-$ yarn
-```
 
-5. Following a successful installation, use `grunt` to compile static elements.
+This will:
+- Watch for changes in project files
+- Automatically rebuild and reload when changes are detected
+- Serve the site locally at http://localhost:3000
 
-```
-$ grunt
-```
+## Project Configuration
 
-6. To run the project:
+### Site Configuration
 
-```
-$ DEBUG=ioos-us:*
-$ node bin/www
-```
+Each site has its own configuration in the `sites/` directory. The site configuration includes:
+- Site-specific assets
+- Routes
+- Templates
+- Images and other resources
 
-### Docker build
+### Asset Management
 
-The Docker build is far simpler:
+Assets are managed through `assets.json` files:
+- Global assets are defined in the root `assets.json`
+- Site-specific assets are defined in `sites/[site-name]/assets.json`
 
+### Templates
 
-1. `$ docker build -t ioos-us .`
-2. `$ docker run -d -p 3000:3000 ioos-us`
-3. Navigate to http://localhost:3000
+The project uses Pug templates located in the `views/` directory. Templates can access:
+- Site configuration
+- Global and site-specific assets
+- Environment variables
 
-
-__NOTE__: ensure that `public/lib` is removed *before* building. If it exists,
-`yarn` will attempt to use the existing one in the Docker build, breaking the symlink
-in the container and lead to ugly CSS.
+###
+To create a new subsite, create a new folder under /sites
+`/sites/example.template` can be used as reference/scaffolding
