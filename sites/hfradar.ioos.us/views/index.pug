@@ -19,7 +19,7 @@ block body
             | are also routinely ingested into oceanographic models. Research is 
             | exploring the use of HF radar for application to tsunami detection 
             | and monitoring significant wave heights. The network currently 
-            | consists of approximately 140 radars in nearly every coastal state 
+            | consists of approximately 183 radars in nearly every coastal state 
             | plus Puerto Rico.
 
           p
@@ -32,7 +32,7 @@ block body
     hr
     .row.map
       .col-md-12
-        a(href="https://hfradar.ioos.us/dev/hfrnet/", target="_blank")
+        a(href="https://hfradar.ioos.us/hfrnet/", target="_blank")
           #helper-overlay
             p Click here to see the map
           img.img-responsive(src="images/scripps.png", alt="SCRIPPS")
@@ -40,8 +40,8 @@ block body
       .col-md-12
         p
           | This 
-          a(href="https://hfradar.ioos.us/dev/hfrnet/", target="_blank")
-            | Scripps page
+          a(href="https://hfradar.ioos.us/hfrnet/", target="_blank")
+            | IOOS page
           |  is the development site for the national HF radar network and gives access 
           | to radar site metadata and diagnostics. The radar sites are marked with 
           | green, red, yellow or white balloon markers.
@@ -81,12 +81,6 @@ block body
               | Data Visualization & Access
             ul#menu2.dropdown-menu(aria-labelledby="drop2")
               li
-                a(href="http://cordc.ucsd.edu/projects/mapping/rtv7day.kml", target="_blank") Google Earth KML (7 day)
-              li.divider(role="separator")
-              li
-                a(href="http://hfrnet.ucsd.edu/thredds/catalog.html", target="_blank") Data Access via CORDC THREDDS Server
-              li.divider(role="separator")
-              li
                 a(href="https://dods.ndbc.noaa.gov/thredds/hfradar.html", target="_blank") Data Access via NDBC THREDDS Server
               li.divider(role="separator")
               li
@@ -109,17 +103,3 @@ block body
               li
                 a(href="//ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/", target="_blank").
                   QARTOD Manual
-
-      .col-sm-6.col-md-3
-        ul.nav.nav-pills.glider-resources
-          li.dropdown(role="presentation")
-            a#drop4.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
-              | Data Provider Tools
-            ul#menu4.dropdown-menu(aria-labelledby="drop4")
-              li
-                a(href="http://cordc.ucsd.edu/projects/mapping/api/", target="_blank").
-                  Mapping API (For off-site maps)
-              li.divider(role="separator")
-              li
-                a(href="http://cordc.ucsd.edu/projects/mapping/documents/ArcGIS_loadData_toolbox.zip", target="_blank").
-                  ArcGIS Toolbox
