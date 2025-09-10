@@ -1,0 +1,15 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "Ocean Acidification",
+        "template": "sites/oa.ioos.us/views/index.pug"
+      }
+    },
+    "css": [
+        "sites/oa.ioos.us/css/main.css",
+        "sites/oa.ioos.us/css/bootstrap.css"
+      ],
+    "js": ["sites/oa.ioos.us/js/main.js"]
+  }
+}

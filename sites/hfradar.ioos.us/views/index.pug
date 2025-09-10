@@ -1,0 +1,105 @@
+extends ../../../views/layout
+
+block body
+  #main-container.homepage.container
+    .row
+      .col-md-3.welcome
+        .rounded-shadow
+          a(href="//ioos.noaa.gov/project/hf-radar/", target="_blank")
+            img.img-responsive(src="images/hf-radar.jpg", alt="IOOS HF Radar")
+      .col-md-9
+        .caption.caption-header
+          h3 IOOS HF Radar
+          p
+            | IOOS operates the nation's only high-frequency (HF) radar network, 
+            | providing real-time information on the speed and direction of surface 
+            | currents. This network supports search and rescue operations, response 
+            | to oil spills, marine shipping navigation, monitoring and tracking 
+            | harmful algal blooms and coastal water quality monitoring. The data 
+            | are also routinely ingested into oceanographic models. Research is 
+            | exploring the use of HF radar for application to tsunami detection 
+            | and monitoring significant wave heights. The network currently 
+            | consists of approximately 183 radars in nearly every coastal state 
+            | plus Puerto Rico.
+
+          p
+            | Registration at 
+            a(href="http://rowg.org/bin/view/System/UserRegistration", target="_blank")
+              | http://rowg.org/bin/view/System/UserRegistration
+            |  is strongly encouraged to enable access to the latest documents on data 
+            | management and analysis.  NOTE:  ROWG.org is a wiki so registration is 
+            | required and is moderated.  Therefore, one's access will not be immediate. 
+    hr
+    .row.map
+      .col-md-12
+        a(href="https://hfradar.ioos.us/hfrnet/", target="_blank")
+          #helper-overlay
+            p Click here to see the map
+          img.img-responsive(src="images/scripps.png", alt="SCRIPPS")
+    .row.caption
+      .col-md-12
+        p
+          | This 
+          a(href="https://hfradar.ioos.us/hfrnet/", target="_blank")
+            | IOOS page
+          |  is the development site for the national HF radar network and gives access 
+          | to radar site metadata and diagnostics. The radar sites are marked with 
+          | green, red, yellow or white balloon markers.
+    hr
+    .row.map
+      .col-md-12
+        a(href="http://hfradar.ndbc.noaa.gov/", target="_blank")
+          #helper-overlay
+            p Click here to see the map
+          img.img-responsive(src="images/ndbc.png", alt="NDBC")
+    .row.caption
+      .col-md-12
+        p
+          | This National Data Buoy Center page is accessed 
+          a(href="http://hfradar.ndbc.noaa.gov/", target="_blank")
+            | here
+          | .
+    hr
+    .row
+      .section-heading
+        h1 HFR Resources
+    .row
+      .col-sm-6.col-md-3
+        ul.nav.nav-pills.glider-resources
+          li.dropdown(role="presentation")
+            a#drop1.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | General Info
+            ul#menu1.dropdown-menu(aria-labelledby="drop1")
+              li
+                a(href="//ioos.noaa.gov/project/hf-radar", target="_blank") IOOS HF Radar Homepage
+                p Summary of IOOS HF radar activities National HF Radar Plan
+
+      .col-sm-6.col-md-3
+        ul.nav.nav-pills.glider-resources
+          li.dropdown(role="presentation")
+            a#drop2.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | Data Visualization & Access
+            ul#menu2.dropdown-menu(aria-labelledby="drop2")
+              li
+                a(href="https://dods.ndbc.noaa.gov/thredds/hfradar.html", target="_blank") Data Access via NDBC THREDDS Server
+              li.divider(role="separator")
+              li
+                a(href="http://rowg.org/bin/view/Data_Management/FileFormatsConversion", target="_blank") Conversion of native radar formats to standardized format
+                p ROWG.org wiki registration required and is moderated so one's access will not be immediate. There are also data analysis tools kept at the ROWG.org wiki page.
+
+      .col-sm-6.col-md-3
+        ul.nav.nav-pills.glider-resources
+          li.dropdown(role="presentation")
+            a#drop3.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false")
+              | Documentation
+            ul#menu3.dropdown-menu(aria-labelledby="drop3")
+              li
+                a(href="//ioos.noaa.gov/project/hf-radar/#documents", target="_blank") General HF radar network documents including archiving at NCEI
+              li.divider(role="separator")
+              li
+                a(href="http://rowg.org/bin/view/Data_Management/HFRadarNetwork", target="_blank") A large number of files that describe the network servers and file formats
+                p ROWG.org wiki registration required and is moderated so one's access will not be immediate
+              li.divider(role="separator")
+              li
+                a(href="//ioos.noaa.gov/ioos-in-action/manual-real-time-quality-control-high-frequency-radar-surface-current-data/", target="_blank").
+                  QARTOD Manual

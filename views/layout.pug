@@ -1,23 +1,23 @@
-// layout.pug
 doctype html
 html(lang="en")
   head
     title= title
-    meta(name="viewport", content="width-device-width", initial-scale="1")
-    link(rel="stylesheet", href="/lib/bootstrap/dist/css/bootstrap.min.css", type="text/css")
-    link(rel="stylesheet", href="/lib/font-awesome/css/font-awesome.min.css", type="text/css")
-    each css in assets.main.css
-      link(rel="stylesheet", href=css, type="text/css")
-    block css
-    link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto', type='text/css')
-    link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Roboto+Slab', type='text/css')
-    each js in assets.main.js
-      script(type="text/javascript", src=js)
-    block js
-  body
+    meta(name="viewport", content="width=device-width", initial-scale="1")
+    
+    if env === 'development'
+      script(src="/ioos-ui-components.min.js")
+    else
+      script(src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components-dev.min.js")
 
+    - var subdirPath = siteSubdirectory ? `/${siteSubdirectory}` : ''
+    
+    script(src=`${subdirPath}/js/main.min.js`)
+    link(rel="icon", href=`${subdirPath}/images/favicon.ico`, type="image/x-icon")
+    link(rel="stylesheet", href=`${subdirPath}/css/main.min.css`, type="text/css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Slab", type="text/css")
+  
+  body
     include ./header.pug
     block body
     include ./feedback.pug
-    </div></div></div>
     include ./footer.pug

@@ -1,0 +1,24 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "The U.S. Integrated Ocean Observing System (IOOS)",
+        "template": "sites/ioos.us/views/index.pug"
+      },
+      "regions": {
+        "title": "Regions",
+        "template": "sites/ioos.us/views/regions.pug"
+      },
+      "surf-cam": {
+        "template": "sites/ioos.us/views/surf-cam.pug"
+      }
+    },
+    "css": [
+        "sites/ioos.us/css/main.css"
+    ],
+    "js": [
+      "sites/ioos.us/js/main.js",
+      "node_modules/masonry-layout/dist/masonry.pkgd.min.js"
+    ]
+  }
+}

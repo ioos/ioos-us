@@ -1,0 +1,55 @@
+[
+    {
+        "id": "data-access",
+        "title": "Data Access",
+        "items": [
+            { "title": "IOOS Data Catalog", "url": "https://data.ioos.us/"},
+            { "title": "Animal Telemetry Network", "url": "https://atn.ioos.us/"},
+            { "title": "Glider DAC", "url": "https://gliders.ioos.us/"},
+            { "title": "HF Radar DAC", "url": "https://hfradar.ioos.us/"},
+            { "title": "IOOS Archive Data Portal", "url": "https://www.ncei.noaa.gov/access/integrated-ocean-observing-system"}
+        ]
+    },
+    {
+        "id": "viewers-portals",
+        "title": "Map Viewers & Portals",
+        "items": [
+            { "title": "Environmental Sensor Map", "url": "https://sensors.ioos.us/"},
+            { "title": "IOOS Model Viewer", "url": "https://eds.ioos.us/"},
+            { "title": "MBON Portal", "url": "https://mbon.ioos.us"},
+            { "title": "COMT", "url": "https://comt.ioos.us"},
+            { "title": "Observing System Monitoring Center", "url": "https://osmc.ioos.us"},
+            { "title": "Ocean Acidification", "url": "https://oa.ioos.us"},
+            { "title": "SanctSound", "url": "https://sanctsound.ioos.us"},
+            { "title": "Video Portal", "url": "https://video.ioos.us"}          
+        ]
+    },
+    {
+        "id": "reg-associations",
+        "title": "Regional Associations",
+        "items": [
+            { "title": "IOOS Region Map", "url": "https://ioos.us/regions"},
+            { "title": "Alaska - AOOS", "url": "https://aoos.org/"},
+            { "title": "Caribbean - CariCOOS", "url": "https://www.caricoos.org/"},
+            { "title": "Central and Northern California - CeNCOOS", "url": "https://cencoos.org/"},
+            { "title": "Great Lakes - GLOS", "url": "https://glos.us/"},
+            { "title": "Gulf of America - GCOOS", "url": "https://gcoos.org/"},
+            { "title": "Mid-Atlantic - MARACOOS", "url": "https://maracoos.org/"},
+            { "title": "Northeast Atlantic - NERACOOS", "url": "https://neracoos.org/"},
+            { "title": "Pacific Islands - PacIOOS", "url": "https://www.pacioos.hawaii.edu/"},
+            { "title": "Pacific Northwest - NANOOS", "url": "https://nanoos.org/"},
+            { "title": "Southeast Atlantic - SECOORA", "url": "https://secoora.org/"},
+            { "title": "Southern California - SCCOOS", "url": "https://www.sccoos.org/"}
+        ]
+    },
+    {
+        "id": "tools-and-resources",
+        "title": "Tools & Resources",
+        "items": [
+            { "title": "IOOS CodeLab", "url": "https://ioos.github.io/ioos_code_lab/content/intro.html" },
+            { "title": "Compliance Checker", "url": "https://compliance.ioos.us"},
+            { "title": "About IOOS", "url": "https://ioos.noaa.gov/about/about-us/" },
+            { "title": "IOOS By the Numbers", "url": "https://ioos.noaa.gov/about/ioos-by-the-numbers" }
+        ]
+    }
+]

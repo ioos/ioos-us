@@ -1,0 +1,76 @@
+:host { 
+    all: unset;
+    visibility: hidden;
+    font-size: 16px!important;
+}
+footer {
+    width: 100%;
+    background-image: url('https://dgd6r9iiqa8y9.cloudfront.net/images/bg-footer.png');
+    background-color: #1c4374;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #fff;
+}
+
+footer h4 {
+    font-family: serif;
+    font-size: 24px;
+}
+
+footer a {
+    color: #55d6f8;
+    text-decoration: none;    
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer .contact.btn {
+    color: #55d6f8;
+    border: 1px solid #55d6f8;
+    font-size: .9em;
+    padding: 10px 30px;
+    border-radius: 0px;
+}
+
+footer .contact.btn:hover {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+footer img.ioos-social {
+    width: 35px;
+    padding: 4px;
+}
+
+footer .footer-col-2 {
+    display: inline-flex;
+}
+
+footer .footer-col-2 img {
+    padding: 0 20px;
+    max-height: 125px;
+}
+
+@media (max-width: 776px) {
+    .footer-col-1 {
+      margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 575px) {
+    .footer-col-1, .footer-col-2 {
+      text-align: center;
+    }
+
+    footer .footer-col-2 {
+        display: block;
+    }
+
+    footer .footer-col-2 img {
+        margin-bottom: 20px;
+    }
+}

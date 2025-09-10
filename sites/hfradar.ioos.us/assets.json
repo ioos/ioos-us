@@ -1,0 +1,16 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "IOOS HF Radar",
+        "template": "sites/hfradar.ioos.us/views/index.pug"
+      }
+    },
+    "css": [
+        "sites/hfradar.ioos.us/css/main.css",
+        "sites/hfradar.ioos.us/css/infographic.css",
+        "sites/hfradar.ioos.us/css/bootstrap.css"
+      ],
+    "js": ["sites/hfradar.ioos.us/js/main.js"]
+  }
+}

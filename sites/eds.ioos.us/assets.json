@@ -1,0 +1,16 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "IOOS Model Viewer",
+        "template": "sites/eds.ioos.us/views/index.pug"
+      }
+    },
+    "css": [
+        "sites/eds.ioos.us/css/main.css",
+        "sites/eds.ioos.us/css/infographic.css",
+        "sites/eds.ioos.us/css/bootstrap.css"
+      ],
+    "js": ["sites/eds.ioos.us/js/main.js"]
+  }
+}
