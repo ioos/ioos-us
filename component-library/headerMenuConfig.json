@@ -21,6 +21,7 @@
             { "title": "Observing System Monitoring Center", "url": "https://osmc.ioos.us"},
             { "title": "Ocean Acidification", "url": "https://oa.ioos.us"},
             { "title": "SanctSound", "url": "https://sanctsound.ioos.us"},
+            { "title": "Sanctuary Watch", "url": "https://sanctuarywatch.ioos.us/ioos_sanctuary_watch"},
             { "title": "Video Portal", "url": "https://video.ioos.us"}          
         ]
     },
