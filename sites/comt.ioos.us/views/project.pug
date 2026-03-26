@@ -1,0 +1,59 @@
+extends ../../../views/layout
+
+block body
+  body(data-spy="scroll", data-target="#sidenav")
+  - var nav = '<div class="sidebar col-md-3" role="complementary"><nav class="nav-list hidden-print hidden-xs hidden-sm affix-top" id="sidenav" data-spy="affix"><ul class="nav sidebar">'
+  - var content = '<div class="col-md-9" role="main">'
+  - var subCount = 0
+  - var page = pagePath
+  - var currentTitle = ''
+
+  each project in data.projectTitles
+    if project.title_key === title_key
+      - nav += '<li class="active"><a href="#' + data.project.id + '">' + data.project.title + '</a></li>'
+      - nav += '<ul class="nav">'
+      each val, index in data.project
+        if index === 'id'
+          - content += '<div class="anchor" id="' + val + '"></div>'
+        else if index === 'title'
+          - content += '<h1 class="page-header">' + val + '</h1>'
+        else 
+          if val != undefined && index !== 'title_key'
+            - var id = index.replace(/[ \/]/g, '-').toLowerCase()
+            - nav += '<li><a href="#' + id + '">' + index + '</a></li>'
+            - content += '<div class="anchor" id="' + id + '"></div><h2>' + index + '</h2>'
+            if index === 'Project Overview and Results'
+              if val.images.length > 0
+                -content += val.images[0];
+              - content += val.text;
+              if val.images.length > 0
+                -content += val.images[1];
+            else
+              - content += val
+          if index === 'Publications'
+            - nav += '</ul>'
+        - subCount++
+        - currentTitle = data.project.title
+    else
+      - nav += '<li><a href="/projects/' + project.title_key + '">' + project.title + '</a></li>'
+
+    - subCount = 0
+  - nav += '</ul></nav></div>'
+  - content += '</div>'
+
+  div#main-container.container.comt-projects
+    div.row
+      ol.breadcrumb
+        li
+          a(href='/')= 'Coastal and Ocean Modeling Testbed'
+        li.active
+          | !{currentTitle}
+    div.row
+      | !{nav}
+      | !{content}
+
+  script.
+    var ds = !{JSON.stringify(datasets)};
+    $(ds).each(function (i, v) {
+      $('div[data-key="' + v.comt["sub-project"] + '"] div.list-group').append('<a href="' + '!{page}' + '/' + v.title.replace(/[^\w]/g, '-').toLowerCase() + '?t=' + $('div[data-key="' + v.comt["sub-project"] + '"] .sub-project-title').text() + '" class="list-group-item">' + v.title + '</a>');
+    });

@@ -1,0 +1,50 @@
+extends ../../../views/layout
+
+block body
+  div#main-container.container.comt-dataset
+    div.row
+      ol.breadcrumb
+        li
+          a(href='/')= 'Coastal and Ocean Modeling Testbed'
+        li
+          a(href='/projects/' + title_key + '#sub-project-descriptions-data')= projectTitle
+        li.active#sub-project-breadcrumb
+          | #{subProjectTitle}
+    div.row
+      h2= dataset.title
+      p= dataset.description
+      div.media
+        div.media-body
+          dl.dl-horizontal
+            if dataset.temporal !== null
+              dt Date Range
+              - var min = new Date(dataset.temporal.substr(0, dataset.temporal.indexOf('/'))).toUTCString().substr(4, 12)
+              - var max = new Date(dataset.temporal.substr(dataset.temporal.lastIndexOf('/') - 19, 19)).toUTCString().substr(4, 12)
+              dd!= min + ' &ndash; ' + max
+            if dataset.spatial !== null
+              dt Spatial Extent
+              dd= dataset.spatial
+            dt Links
+            dd
+              ul
+                each distro in dataset.distributions
+                  li
+                    a(href=distro.downloadURL, target='_blank')= distro.description
+            dt Available Variables
+            dd
+              ul
+                each variable in dataset.variablesMeasured
+                  if typeof variable !== 'string'
+                    li
+                      span.badge(style='background-color:' + variable[1])= variable[0]
+
+  script.
+    // Read subProjectTitle from query param if available
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var t = params.get('t');
+      if (t) {
+        var el = document.getElementById('sub-project-breadcrumb');
+        if (el) el.textContent = t;
+      }
+    })();

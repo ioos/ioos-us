@@ -10,6 +10,7 @@ on:
         type: choice
         options:
           - ioos.us
+          - comt.ioos.us
           - eds.ioos.us
           - gliders.ioos.us
           - hfradar.ioos.us
