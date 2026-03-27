@@ -264,7 +264,13 @@ button#search-data-button.btn.btn-default.open span::before
 }
 
 #grid-container .col-md-12 {
-  padding: 0 0 40px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#grid-container .col-md-12 > [class*="col-"] {
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -1107,6 +1113,16 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
   background-color: transparent;
   height: 300px;
   perspective: 1000px;
+}
+
+[class*="flip-box-front-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[class*="flip-box-front-"] > h1 {
+  margin-top: 0 !important;
 }
 
 .flip-box-inner-model-viewer {
