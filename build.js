@@ -34,7 +34,7 @@ function loadAssets(site) {
 }
 
 // Compile Pug templates to HTML
-function compilePugTemplates(siteConfig, siteSubdirectory, assets, siteAssets) {
+function compilePugTemplates(siteConfig, siteSubdirectory, assets, siteAssets, extraIndexData) {
   const viewsDir = path.join(__dirname, 'views');
   const outputDir = path.join(__dirname, 'static');
 
@@ -50,13 +50,17 @@ function compilePugTemplates(siteConfig, siteSubdirectory, assets, siteAssets) {
 
     const outputPath = path.join(outputDir, route === 'index' ? 'index.html' : `${route}/index.html`);
 
+    // Merge any extra data for the index route (e.g., data-driven content)
+    const extra = (route === 'index' && extraIndexData) ? extraIndexData : {};
+
     try {
       const html = pug.renderFile(template, {
         siteConfig: siteConfig,
         siteSubdirectory: siteSubdirectory,
         assets,
         env: process.env.NODE_ENV || 'production',
-        title: siteAssets.main.routes[route].title ?? siteAssets.main.routes['index'].title
+        title: siteAssets.main.routes[route].title ?? siteAssets.main.routes['index'].title,
+        ...extra
       });
       fs.outputFileSync(outputPath, html);
       console.log(`Generated: ${outputPath}`);
@@ -140,6 +144,19 @@ function copyDirectory(source, destination) {
   }
 }
 
+// Load an optional site-specific build module (e.g., sites/comt.ioos.us/build.js)
+function loadSiteBuildModule(siteConfig) {
+  const modulePath = path.join(__dirname, `sites/${siteConfig}/build.js`);
+  try {
+    if (fs.existsSync(modulePath)) {
+      return require(modulePath);
+    }
+  } catch (err) {
+    console.error(`Error loading site build module for ${siteConfig}:`, err);
+  }
+  return null;
+}
+
 // Main build process
 function build() {
   const SITE_CONFIG = loadSiteConfig();
@@ -150,8 +167,34 @@ function build() {
 
   console.log('Starting build process...');
 
-  // Compile Pug templates
-  compilePugTemplates(SITE_CONFIG, SITE_SUBDIRECTORY, assets, siteAssets);
+  const sourcePath = path.join(__dirname, `sites/${SITE_CONFIG}`);
+  const outputDir = path.join(__dirname, 'static');
+
+  // Check for a site-specific build module
+  const siteBuild = loadSiteBuildModule(SITE_CONFIG);
+  const buildContext = {
+    pug, fs, path,
+    siteConfig: SITE_CONFIG,
+    siteSubdirectory: SITE_SUBDIRECTORY,
+    siteDir: sourcePath,
+    assets,
+    siteAssets,
+    outputDir
+  };
+
+  // If the site provides getIndexData, merge that into the initial template render
+  let extraIndexData = {};
+  if (siteBuild && typeof siteBuild.getIndexData === 'function') {
+    extraIndexData = siteBuild.getIndexData(buildContext);
+  }
+
+  // Compile Pug templates for static routes
+  compilePugTemplates(SITE_CONFIG, SITE_SUBDIRECTORY, assets, siteAssets, extraIndexData);
+
+  // If the site provides compileDataRoutes, call it for data-driven pages
+  if (siteBuild && typeof siteBuild.compileDataRoutes === 'function') {
+    siteBuild.compileDataRoutes(buildContext);
+  }
 
   // Combine and compile JavaScript
   const jsOutputPath = `static/js/main.min.js`;
@@ -163,12 +206,10 @@ function build() {
   const cssFiles = combineAssets(assets.main.css, siteAssets.main.css);
   compileCSS(cssOutputPath, cssFiles);
 
-  const sourcePath = path.join(__dirname, `sites/${SITE_CONFIG}`);
-  const destinationPath = path.join(__dirname, 'static');
-
-  copyDirectory(`images`, `${destinationPath}/images`);
-  copyDirectory(`${sourcePath}/images`, `${destinationPath}/images`);
-  copyDirectory(`${sourcePath}/css/fonts`, `${destinationPath}/fonts`);
+  copyDirectory(`images`, `${outputDir}/images`);
+  copyDirectory(`${sourcePath}/images`, `${outputDir}/images`);
+  copyDirectory(`${sourcePath}/css/fonts`, `${outputDir}/fonts`);
+  copyDirectory(`${sourcePath}/docs`, `${outputDir}/docs`);
 
   console.log('Build process complete.');
 }

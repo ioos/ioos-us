@@ -38,12 +38,16 @@ class HeaderComponent extends HTMLElement {
     }
 
     render() {
+        const showBanner = this.getAttribute('ioos-banner') !== 'off';
+        const bannerHtml = showBanner ? `
+                <div class="ioos-top-header">
+                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
+                </div>` : '';
+        
         this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${headerStyles}</style>
             <header>
-                <div class="ioos-top-header">
-                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
-                </div>
+                ${bannerHtml}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <a class="navbar-brand mobile" href="https://ioos.us">

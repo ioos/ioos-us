@@ -1,0 +1,37 @@
+{
+  "main": {
+    "routes": {
+      "index": {
+        "title": "IOOS COMT - Coastal and Ocean Modeling Testbed",
+        "template": "sites/comt.ioos.us/views/index.pug"
+      },
+      "model_viewer": {
+        "title": "Model Viewer Redirect",
+        "template": "sites/comt.ioos.us/views/model-viewer-redirect.pug"
+      }
+    },
+    "dataRoutes": [
+      {
+        "pattern": "projects/:title_key",
+        "template": "sites/comt.ioos.us/views/project.pug",
+        "dataFile": "sites/comt.ioos.us/data/comt_projects.json",
+        "dataKey": "projects",
+        "paramField": "title_key",
+        "titlePrefix": "COMT Projects | "
+      },
+      {
+        "pattern": "projects/:title_key/:dataset",
+        "template": "sites/comt.ioos.us/views/dataset.pug",
+        "dataFile": "sites/comt.ioos.us/data/comt_datasets.json",
+        "dataKey": "datasets"
+      }
+    ],
+    "css": [
+      "sites/comt.ioos.us/css/main.css"
+    ],
+    "js": [
+      "node_modules/masonry-layout/dist/masonry.pkgd.min.js",
+      "sites/comt.ioos.us/js/main.js"
+    ]
+  }
+}

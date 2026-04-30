@@ -1,0 +1,107 @@
+extends ../../../views/layout
+
+block body
+    //- Build project thumbnails for each COMT round
+    - var safeProjects = typeof projects !== 'undefined' ? projects : []
+    - var projectThumbs1 =  ''
+    each project in safeProjects
+        if (project.title_key == "cb_hypoxia" || project.title_key == "gom_hypoxia" || project.title_key == "extratropical_inundation" || project.title_key == "tropical_inundation")
+            - projectThumbs1 += '<div class="col-md-12" style="background-color:#fff;"><div class="thumbnail"><div class="caption"><h3>' + project.title + '</h3>'
+            if (project.overview)
+                - projectThumbs1 += project.overview 
+            - projectThumbs1 += '<p><a href="projects/' + project.title_key + '" class="btn btn-primary" role="button">More Info</a></p></div></div></div>'
+
+    - var projectThumbs2 =  ''
+    each project in safeProjects
+        if (project.title_key == "cb_hypoxia" || project.title_key == "gom_hypoxia" || project.title_key == "usw_integration" || project.title_key == "pr_inundation")
+            - projectThumbs2 += '<div class="col-md-12" style="background-color:#fff;"><div class="thumbnail"><div class="caption"><h3>' + project.title + '</h3>'
+            if (project.overview)
+                - projectThumbs2 += project.overview 
+            - projectThumbs2 += '<p><a href="projects/' + project.title_key + '" class="btn btn-primary" role="button">More Info</a></p></div></div></div>'
+
+    - var projectThumbs3 =  ''
+    each project in safeProjects
+        if (project.title_key == "water_hazards" || project.title_key == "necofs_transition" || project.title_key == "data_framework" || project.title_key == "wcofs_advancement" || project.title_key == "salish_sea")
+            - projectThumbs3 += '<div class="col-md-12" style="background-color:#fff;"><div class="thumbnail"><div class="caption"><h3>' + project.title + '</h3>'
+            if (project.overview)
+                - projectThumbs3 += project.overview 
+            - projectThumbs3 += '<p><a href="projects/' + project.title_key + '" class="btn btn-primary" role="button">More Info</a></p></div></div></div>'
+
+    - var projectThumbs4 =  ''
+    each project in safeProjects
+        if (project.title_key == "cbefs" || project.title_key == "liveocean" || project.title_key == "water_level_modeling" || project.title_key == "coupled_ocean_modeling_testbed_platform" || project.title_key == "data_assimilation_algorithms")
+            - projectThumbs4 += '<div class="col-md-12" style="background-color:#fff;"><div class="thumbnail"><div class="caption"><h3>' + project.title + '</h3>'
+            if (project.overview)
+                - projectThumbs4 += project.overview 
+            - projectThumbs4 += '<p><a href="projects/' + project.title_key + '" class="btn btn-primary" role="button">More Info</a></p></div></div></div>'
+
+
+    div#main-container.container.comt
+        div.row
+            div.col-md-12
+                h1= 'Coastal and Ocean Modeling Testbed'
+                hr
+        div.row
+            div.col-md-12(align='justify')
+                img(src='images/comt/Potential_Temperature_CB.png', class='img-responsive homepage-img-p')
+                p= 'Coastal waters and lowlands of the U.S. are threatened by climate change, sea-level rise, flooding, oxygen depleted "dead zones", oil spills and unforeseen disasters. With funding from the IOOS Program Office and coordination from the Southeastern Universities Research Association (SURA), strong and strategic collaborations among experts from academia, federal operational centers and industry were forged to create the U.S. IOOS Coastal and Ocean Modeling Testbed (COMT).'
+                p= 'The COMT serves as a conduit between the federal operational and research communities and allows sharing of numerical models, observations and software tools. The COMT supports integration, comparison, scientific analyses and archiving of data and model output needed to elucidate, prioritize, and resolve federal and regional operational coastal ocean issues associated with a range of existing and emerging coastal oceanic, hydrologic, and ecological models. The Testbed has enabled significant community building (within the modeling community as well as enhancing academic and federal operational relations) which has dramatically improved model development.'
+                p= 'Projects supported through the COMT are designed to create new knowledge, new model code and tools; develop operational user capacity; and build a repository of evaluation data sets to expand and improve the modeling capabilities of operational partners and the broader coastal and ocean modeling community.  Transition from research to operations is enhanced by scoping projects that meet identified operational needs, including both researchers and operational users on project teams, and leveraging transition resources such as NOAA\'s Research Transition Acceleration Program (RTAP).'
+        div.row
+            div.col-md-12
+                div.row
+                    div.col-md-6(align='justify')
+                        h2.subtitle= 'Mission'
+                        p= 'To use applied research and development to accelerate the transition of scientific and technical advances from the coastal ocean modeling research community to improved operational ocean products and services (i.e. via research to operations and also operations to research)'
+                    div.col-md-6(align='justify')
+                        h2.subtitle= 'Vision'
+                        p= 'To increase the accuracy, reliability, and scope of the federal suite of operational ocean modeling products to meet the needs of a diverse user community.  Operational use covers a wide range of society-critical applications including forecasts, forensic studies, risk assessment, and design and system management.'
+        div.row
+            div.col-md-12
+                div.row
+                    div.col-md-3
+                        img(src='images/comt/Sea_Surface_Elevation_Sandy.png', class='img-responsive homepage-img')
+                    div.col-md-6
+                        img(src='images/comt/Dissolved_Oxygen_LA.png', class='img-responsive homepage-img')
+                    div.col-md-3
+                        img(src='images/comt/Significant_Wave_Height_Georges.png', class='img-responsive homepage-img')
+    div.container-fluid
+        hr.hr-homepage
+    div#main-container.container.comt
+        div.row
+            div.col-md-12
+                h2= 'Projects'
+                .container
+                    #accordion.panel-group
+                        .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                            a.accordion-toggle(data-toggle='collapse', href='#collapseOne')
+                                | COMT Round 4 – Years 2021-2024
+                        #collapseOne.panel-collapse.collapse.in
+                            p.panel-body
+                                | !{projectThumbs4}
+                        .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                            a.accordion-toggle(data-toggle='collapse', href='#collapseTwo')
+                                | COMT Round 3 – Years 2018-2022
+                        #collapseTwo.panel-collapse.collapse
+                            p.panel-body
+                                | !{projectThumbs3}
+                        .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                            a.accordion-toggle(data-toggle='collapse', href='#collapseThree')
+                                | COMT Round 2 – Years 2017 – 2018
+                        #collapseThree.panel-collapse.collapse
+                            p.panel-body
+                                | !{projectThumbs2}
+                        .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                            a.accordion-toggle(data-toggle='collapse', href='#collapseFour')
+                                | COMT Round 1 – Years 2013 – 2016
+                        #collapseFour.panel-collapse.collapse
+                            p.panel-body
+                                | !{projectThumbs1}
