@@ -53,6 +53,14 @@ You can override the default menu items by passing a `menu-config` attribute to 
 ]'></ioos-header>
 ```
 
+### Hiding the top emblem banner (`ioos-banner`)
+
+By default, the header shows a narrow strip above the main navigation with the IOOS emblem. Set `ioos-banner="off"` on `<ioos-header>` to omit that strip so only the navbar (logo and menu) is shown.
+
+```html
+<ioos-header ioos-banner="off"></ioos-header>
+```
+
 ## Reference Menu Configuration
 If you prefer not to use the built-in menu component but want to ensure your menu is synchronized with the standard IOOS menu, you can use our reference `menuConfig.json`.
 #### Reference Menu Config
