@@ -14,6 +14,44 @@ footer {
     color: #fff;
 }
 
+footer .row {
+    justify-content: center;
+}
+
+footer .footer-col-1, footer .footer-col-2 {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+footer .footer-col-1 {
+    margin-right: 60px;
+}
+
+@media (min-width: 777px) {
+    footer .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    footer .row {
+        align-items: center;
+        gap: 100px;
+        margin: 0;
+    }
+
+    footer .footer-col-1, footer .footer-col-2 {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        padding: 0;
+    }
+
+    footer .footer-col-1 {
+        margin-right: 0;
+    }
+}
+
 footer h4 {
     font-family: serif;
     font-size: 24px;
@@ -42,8 +80,9 @@ footer .contact.btn:hover {
 }
 
 footer img.ioos-social {
-    width: 35px;
+    width: 32px;
     padding: 4px;
+    margin: 0 2px;
 }
 
 footer .footer-col-2 {
@@ -56,13 +95,18 @@ footer .footer-col-2 img {
 }
 
 @media (max-width: 776px) {
-    .footer-col-1 {
+    footer .footer-col-1, footer .footer-col-2 {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    footer .footer-col-1 {
       margin-bottom: 50px;
     }
 }
 
 @media (max-width: 575px) {
-    .footer-col-1, .footer-col-2 {
+    footer .footer-col-1, footer .footer-col-2 {
       text-align: center;
     }
 
