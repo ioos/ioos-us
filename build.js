@@ -207,6 +207,8 @@ function build() {
   compileCSS(cssOutputPath, cssFiles);
 
   copyDirectory(`images`, `${outputDir}/images`);
+  copyDirectory(`fonts`, `${outputDir}/fonts`);
+  copyDirectory(`css/roboto-slab.css`, `${outputDir}/css/roboto-slab.css`);
   copyDirectory(`${sourcePath}/images`, `${outputDir}/images`);
   copyDirectory(`${sourcePath}/css/fonts`, `${outputDir}/fonts`);
   copyDirectory(`${sourcePath}/docs`, `${outputDir}/docs`);
