@@ -1,5 +1,7 @@
 :host { 
     all: unset;
+    position: relative;
+    z-index: 999999;
     visibility: hidden;
     font-size: 16px!important;
 }
@@ -27,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    z-index: 999998;
 }
 
 .navbar.navbar-expand-lg .navbar-nav {
@@ -69,6 +71,7 @@
     background-color: #122c4e;
     font-size: 15px;
     border-radius: unset;
+    z-index: 999999;
 }
 
 .dropdown-menu.show>li>a:hover,
@@ -105,7 +108,7 @@
 
     header.compact .ioos-top-header {
         position: relative;
-        z-index: 1000;
+        z-index: 999999;
         background: #fff;
         display: flex;
         align-items: center;
@@ -136,7 +139,7 @@
         visibility: hidden;
         pointer-events: none;
         transition: top 0.25s ease, visibility 0.25s ease;
-        z-index: 999;
+        z-index: 999998;
     }
 
     header.compact:hover .navbar.navbar-expand-lg {
