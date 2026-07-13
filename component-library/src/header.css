@@ -96,6 +96,54 @@
         margin-right: .5em;
         font-size: .9em;
     }
+
+    /* compact: navbar slides down from below the banner on hover */
+    header.compact {
+        position: relative;
+        height: 55px;
+    }
+
+    header.compact .ioos-top-header {
+        position: relative;
+        z-index: 1000;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header.compact .compact-caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 10px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #55d6f8;
+        transition: transform 0.25s ease;
+    }
+
+    header.compact:hover .compact-caret {
+        transform: rotate(180deg);
+    }
+
+    header.compact .navbar.navbar-expand-lg {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        visibility: hidden;
+        pointer-events: none;
+        transition: top 0.25s ease, visibility 0.25s ease;
+        z-index: 999;
+    }
+
+    header.compact:hover .navbar.navbar-expand-lg {
+        top: 55px;
+        visibility: visible;
+        pointer-events: auto;
+    }
 }
 
 @media (max-width: 990px) {
@@ -134,5 +182,59 @@
 
     .dropdown-toggle::after {
         content: none;
+    }
+
+    /* Compact on mobile: show white banner with caret, hide blue bar */
+    header.compact .ioos-top-header {
+        display: flex!important;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    header.compact .compact-caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 10px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #55d6f8;
+        transition: transform 0.25s ease;
+    }
+
+    header.compact .compact-caret.open {
+        transform: rotate(180deg);
+    }
+
+    header.compact .navbar.navbar-expand-lg {
+        position: absolute;
+        top: 55px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #013087;
+    }
+
+    header.compact .navbar-brand.mobile {
+        display: none!important;
+    }
+
+    header.compact .navbar-toggler {
+        display: none!important;
+    }
+
+    header.compact .navbar-collapse {
+        display: none;
+        height: auto;
+    }
+
+    header.compact .navbar-collapse.show {
+        display: block;
+    }
+
+    header.compact .navbar-nav {
+        margin-top: 0;
     }
 }

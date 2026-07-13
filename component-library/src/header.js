@@ -14,17 +14,20 @@ class HeaderComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['menu-config'];
+        return ['menu-config', 'variant'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'menu-config') {
             try {
                 this.menus = JSON.parse(newValue);
-                this.render(); // Re-render the component with the new menu config
+                this.render();
             } catch (error) {
                 console.error('Invalid JSON passed to menu-config:', error);
             }
+        }
+        if (name === 'variant') {
+            this.render();
         }
     }
 
@@ -37,16 +40,32 @@ class HeaderComponent extends HTMLElement {
         this.render(); // Re-render the component when the menu config is updated
     }
 
+    // Resolves the effective variant: 'default', 'no-banner', or 'compact'.
+    // ioos-banner="off" is a deprecated alias for variant="no-banner".
+    get variant() {
+        const variant = this.getAttribute('variant');
+        if (variant === 'compact' || variant === 'no-banner') {
+            return variant;
+        }
+        if (this.getAttribute('ioos-banner') === 'off') {
+            return 'no-banner';
+        }
+        return 'default';
+    }
+
     render() {
-        const showBanner = this.getAttribute('ioos-banner') !== 'off';
-        const bannerHtml = showBanner ? `
+        const variant = this.variant;
+        const isCompact = variant === 'compact';
+        const bannerHtml = variant !== 'no-banner' ? `
                 <div class="ioos-top-header">
                     <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
+                    ${isCompact ? '<span class="compact-caret"></span>' : ''}
                 </div>` : '';
+        const headerClass = isCompact ? ' class="compact"' : '';
         
         this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${headerStyles}</style>
-            <header>
+            <header${headerClass}>
                 ${bannerHtml}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -80,6 +99,14 @@ class HeaderComponent extends HTMLElement {
             toggler.addEventListener('click', this.handleTogglerClick);
         }
 
+        if (this.variant === 'compact') {
+            const banner = this.shadowRoot.querySelector('.ioos-top-header');
+            if (banner) {
+                this.handleBannerClick = this.handleBannerClick.bind(this);
+                banner.addEventListener('click', this.handleBannerClick);
+            }
+        }
+
         setTimeout(() => {
             this.shadowRoot.host.style.visibility = 'visible';
         }, 5);
@@ -93,6 +120,16 @@ class HeaderComponent extends HTMLElement {
         const collapse = this.shadowRoot.querySelector('.navbar-collapse');
         event.stopPropagation();
         collapse.classList.toggle('show');
+    }
+
+    handleBannerClick(event) {
+        const isMobile = window.matchMedia('(max-width: 990px)').matches;
+        if (!isMobile) return;
+        event.stopPropagation();
+        const collapse = this.shadowRoot.querySelector('.navbar-collapse');
+        const caret = this.shadowRoot.querySelector('.compact-caret');
+        collapse.classList.toggle('show');
+        if (caret) caret.classList.toggle('open');
     }
 
     handleShadowClick(event) {
@@ -115,6 +152,8 @@ class HeaderComponent extends HTMLElement {
         if (collapse && collapse.classList.contains('show')) {
             collapse.classList.remove('show');
         }
+        const caret = this.shadowRoot.querySelector('.compact-caret');
+        if (caret) caret.classList.remove('open');
         this.closeAllDropdowns();
     }
 
