@@ -40,10 +40,23 @@ class HeaderComponent extends HTMLElement {
         this.render(); // Re-render the component when the menu config is updated
     }
 
+    // Resolves the effective variant: 'default', 'no-banner', or 'compact'.
+    // ioos-banner="off" is a deprecated alias for variant="no-banner".
+    get variant() {
+        const variant = this.getAttribute('variant');
+        if (variant === 'compact' || variant === 'no-banner') {
+            return variant;
+        }
+        if (this.getAttribute('ioos-banner') === 'off') {
+            return 'no-banner';
+        }
+        return 'default';
+    }
+
     render() {
-        const isCompact = this.getAttribute('variant') === 'compact';
-        const showBanner = isCompact || this.getAttribute('ioos-banner') !== 'off';
-        const bannerHtml = showBanner ? `
+        const variant = this.variant;
+        const isCompact = variant === 'compact';
+        const bannerHtml = variant !== 'no-banner' ? `
                 <div class="ioos-top-header">
                     <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
                     ${isCompact ? '<span class="compact-caret"></span>' : ''}
@@ -86,7 +99,7 @@ class HeaderComponent extends HTMLElement {
             toggler.addEventListener('click', this.handleTogglerClick);
         }
 
-        if (this.getAttribute('variant') === 'compact') {
+        if (this.variant === 'compact') {
             const banner = this.shadowRoot.querySelector('.ioos-top-header');
             if (banner) {
                 this.handleBannerClick = this.handleBannerClick.bind(this);

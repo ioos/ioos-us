@@ -53,26 +53,23 @@ You can override the default menu items by passing a `menu-config` attribute to 
 ]'></ioos-header>
 ```
 
-### Hiding the top emblem banner (`ioos-banner`)
+### Header variants (`variant`)
 
-By default, the header shows a narrow strip above the main navigation with the IOOS emblem. Set `ioos-banner="off"` on `<ioos-header>` to omit that strip so only the navbar (logo and menu) is shown.
-
-```html
-<ioos-header ioos-banner="off"></ioos-header>
-```
-
-### Compact variant (`variant`)
-
-Set `variant="compact"` to reduce the header height to just the white IOOS emblem banner (55px). A light blue caret appears to the right of the banner indicating the menu is available. On desktop, hovering over the header slides the blue navigation bar down below the banner. On mobile, tapping the banner toggles the menu open/closed.
+The `variant` attribute selects the header layout:
 
 ```html
+<ioos-header></ioos-header>
+<ioos-header variant="no-banner"></ioos-header>
 <ioos-header variant="compact"></ioos-header>
 ```
 
 | Value | Behavior |
 |-------|----------|
 | *(absent or `"default"`)* | Full header with emblem banner + blue navigation bar (default) |
-| `"compact"` | Only the emblem banner is visible; blue navigation bar slides down below the banner on hover/tap |
+| `"no-banner"` | Blue navigation bar only; the white emblem banner strip is hidden |
+| `"compact"` | Only the emblem banner (55px) is visible with a light blue caret; on desktop, hovering slides the blue navigation bar down below the banner, and on mobile, tapping the banner toggles the menu |
+
+> Note: `ioos-banner="off"` is a deprecated alias for `variant="no-banner"` and is kept for backward compatibility. It is ignored when a `variant` is set.
 
 #### Visual comparison
 
