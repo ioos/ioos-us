@@ -12,10 +12,26 @@
 
 <body style="margin: 0;">
     
-    <ioos-header 
-        <!-- This is optional and can be used to disable the white IOOS banner -->
-        <!-- ioos-banner="off" -->
-    ></ioos-header>
+    <!--
+        <ioos-header> options:
+
+        ioos-banner="off"
+            Hides the white IOOS emblem banner strip above the blue navigation bar,
+            so only the navbar (logo and menu) is shown. Omit for the default (banner shown).
+            Example: <ioos-header ioos-banner="off"></ioos-header>
+
+        variant="compact"
+            Reduces the header to just the white IOOS emblem banner (55px) with a light
+            blue caret. On desktop, hovering slides the blue navigation bar down below
+            the banner. On mobile, tapping the banner toggles the menu.
+            Omit for the default full-height header.
+            Example: <ioos-header variant="compact"></ioos-header>
+
+        menu-config='[...]'
+            Overrides the default menu items with a custom JSON configuration.
+            See README.md for the expected JSON format.
+    -->
+    <ioos-header></ioos-header>
 
 
     <div style="height: 1500px;">

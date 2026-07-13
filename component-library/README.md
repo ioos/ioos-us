@@ -61,6 +61,29 @@ By default, the header shows a narrow strip above the main navigation with the I
 <ioos-header ioos-banner="off"></ioos-header>
 ```
 
+### Compact variant (`variant`)
+
+Set `variant="compact"` to reduce the header height to just the white IOOS emblem banner (55px). A light blue caret appears to the right of the banner indicating the menu is available. On desktop, hovering over the header slides the blue navigation bar down below the banner. On mobile, tapping the banner toggles the menu open/closed.
+
+```html
+<ioos-header variant="compact"></ioos-header>
+```
+
+| Value | Behavior |
+|-------|----------|
+| *(absent or `"default"`)* | Full header with emblem banner + blue navigation bar (default) |
+| `"compact"` | Only the emblem banner is visible; blue navigation bar slides down below the banner on hover/tap |
+
+#### Visual comparison
+
+**Default:**
+
+![Default variant](assets/header-default-view.png)
+
+**Compact:**
+
+![Compact variant](assets/header-compact-view.gif)
+
 ## Reference Menu Configuration
 If you prefer not to use the built-in menu component but want to ensure your menu is synchronized with the standard IOOS menu, you can use our reference `menuConfig.json`.
 #### Reference Menu Config
