@@ -71,6 +71,21 @@ The `variant` attribute selects the header layout:
 
 > Note: `ioos-banner="off"` is a deprecated alias for `variant="no-banner"` and is kept for backward compatibility. It is ignored when a `variant` is set.
 
+### Theme (`theme`)
+
+The `theme` attribute controls the banner color scheme:
+
+```html
+<ioos-header></ioos-header>
+<ioos-header theme="light"></ioos-header>
+<ioos-header theme="dark"></ioos-header>
+```
+
+| Value | Behavior |
+|-------|----------|
+| *(absent or `"light"`)* | Light banner (default) |
+| `"dark"` | Dark banner background |
+
 #### Visual comparison
 
 **Default:**

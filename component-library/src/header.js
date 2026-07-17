@@ -14,7 +14,7 @@ class HeaderComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['menu-config', 'variant'];
+        return ['menu-config', 'variant', 'theme'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -27,6 +27,9 @@ class HeaderComponent extends HTMLElement {
             }
         }
         if (name === 'variant') {
+            this.render();
+        }
+        if (name === 'theme') {
             this.render();
         }
     }
@@ -53,19 +56,27 @@ class HeaderComponent extends HTMLElement {
         return 'default';
     }
 
+    // Resolves the effective theme: 'light' (default) or 'dark'.
+    get theme() {
+        return this.getAttribute('theme') === 'dark' ? 'dark' : 'light';
+    }
+
     render() {
         const variant = this.variant;
         const isCompact = variant === 'compact';
+        const emblemSrc = this.theme === 'dark'
+            ? 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem-dark.png'
+            : 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png';
         const bannerHtml = variant !== 'no-banner' ? `
                 <div class="ioos-top-header">
-                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png" class="img-fluid" />
+                    <img src="${emblemSrc}" class="img-fluid" />
                     ${isCompact ? '<span class="compact-caret"></span>' : ''}
                 </div>` : '';
         const headerClass = isCompact ? ' class="compact"' : '';
         
         this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${headerStyles}</style>
-            <header${headerClass}>
+            <header${headerClass} data-theme="${this.theme}">
                 ${bannerHtml}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
