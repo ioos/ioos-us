@@ -10,6 +10,7 @@ class HeaderComponent extends HTMLElement {
         this.handleShadowClick = this.handleShadowClick.bind(this);
         this.handleDocumentClick = this.handleDocumentClick.bind(this);
         this.handleTogglerClick = this.handleTogglerClick.bind(this);
+        this.applyTheme = this.applyTheme.bind(this);
         this.render();
     }
 
@@ -56,17 +57,47 @@ class HeaderComponent extends HTMLElement {
         return 'default';
     }
 
-    // Resolves the effective theme: 'light' (default) or 'dark'.
+    // Resolves the effective theme: 'light' (default), 'dark', or detected via 'auto'.
+    //
+    // EXPERIMENTAL — theme="auto" has LIMITED SUPPORT. It currently only detects:
+    //   1. <html data-theme="light|dark">
+    //   2. OS-level prefers-color-scheme, as a fallback when the page sets no data-theme
+    // add new detection strategies here as sites need them.
     get theme() {
-        return this.getAttribute('theme') === 'dark' ? 'dark' : 'light';
+        const attr = this.getAttribute('theme');
+        if (attr === 'dark') return 'dark';
+        if (attr === 'auto') {
+            const pageTheme = document.documentElement.getAttribute('data-theme');
+            if (pageTheme === 'dark') return 'dark';
+            if (pageTheme === 'light') return 'light';
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        return 'light';
+    }
+
+    getEmblemSrc() {
+        return this.theme === 'dark'
+            ? 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem-dark.png'
+            : 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png';
+    }
+
+    // Targeted theme update: re-stamps data-theme and swaps the emblem image
+    // without re-rendering the whole shadow DOM (which would close open menus
+    // and orphan the listeners attached in connectedCallback).
+    applyTheme() {
+        const header = this.shadowRoot.querySelector('header');
+        if (!header) return;
+        header.setAttribute('data-theme', this.theme);
+        const emblem = header.querySelector('.ioos-top-header img');
+        if (emblem) {
+            emblem.src = this.getEmblemSrc();
+        }
     }
 
     render() {
         const variant = this.variant;
         const isCompact = variant === 'compact';
-        const emblemSrc = this.theme === 'dark'
-            ? 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem-dark.png'
-            : 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem.png';
+        const emblemSrc = this.getEmblemSrc();
         const bannerHtml = variant !== 'no-banner' ? `
                 <div class="ioos-top-header">
                     <img src="${emblemSrc}" class="img-fluid" />
@@ -116,6 +147,16 @@ class HeaderComponent extends HTMLElement {
                 this.handleBannerClick = this.handleBannerClick.bind(this);
                 banner.addEventListener('click', this.handleBannerClick);
             }
+        }
+
+        if (this.getAttribute('theme') === 'auto') {
+            this.themeObserver = new MutationObserver(() => this.applyTheme());
+            this.themeObserver.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-theme'],
+            });
+            this.prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+            this.prefersDark.addEventListener('change', this.applyTheme);
         }
 
         setTimeout(() => {
@@ -174,6 +215,14 @@ class HeaderComponent extends HTMLElement {
         const toggler = this.shadowRoot.querySelector('.navbar-toggler');
         if (toggler) {
             toggler.removeEventListener('click', this.handleTogglerClick);
+        }
+        if (this.themeObserver) {
+            this.themeObserver.disconnect();
+            this.themeObserver = null;
+        }
+        if (this.prefersDark) {
+            this.prefersDark.removeEventListener('change', this.applyTheme);
+            this.prefersDark = null;
         }
     }
 
