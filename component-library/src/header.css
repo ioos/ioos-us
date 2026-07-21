@@ -9,11 +9,19 @@
     width: 100%;
 }
 
+/* Dark theme: sets the banner background dark. Light leaves --banner-bg unset
+   so the fallbacks apply. The dark-mode emblem image (swapped in header.js) is
+   light artwork designed for this dark background. */
+header[data-theme="dark"] {
+    --banner-bg: #021a47;
+}
+
 .ioos-top-header {
     text-align: center;
     display: block;
     height: 55px;
     width: 100%;
+    background: var(--banner-bg, transparent);
 }
 
 .ioos-top-header img {
@@ -109,7 +117,7 @@
     header.compact .ioos-top-header {
         position: relative;
         z-index: 999999;
-        background: #fff;
+        background: var(--banner-bg, #fff);
         display: flex;
         align-items: center;
         justify-content: center;

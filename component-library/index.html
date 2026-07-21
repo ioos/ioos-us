@@ -33,16 +33,29 @@
             Overrides the default menu items with a custom JSON configuration.
             See README.md for the expected JSON format.
 
+        theme="light" (or omitted)
+            Light banner (default).
+            Example: <ioos-header theme="light"></ioos-header>
+
+        theme="dark"
+            Dark banner background.
+            Example: <ioos-header theme="dark"></ioos-header>
+
+        theme="auto"
+            EXPERIMENTAL, LIMITED SUPPORT.
+            Currently only detects <html data-theme="light|dark">,
+            Falling back to the OS/browser prefers-color-scheme.
+            Example: <ioos-header theme="auto"></ioos-header>
+
         ioos-banner="off"
             Deprecated alias for variant="no-banner". Ignored when a variant is set.
     -->
-    <ioos-header></ioos-header>
+    <ioos-header theme="auto"></ioos-header>
 
 
     <div style="height: 1500px;">
         <!-- Content goes here -->
     </div>
-
 
     <ioos-footer></ioos-footer>
 </body>

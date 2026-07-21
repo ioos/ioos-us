@@ -22,11 +22,11 @@ To use these components in your project:
 <script src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js">
 ```
 
-2. Add the header and footer containers to your HTML:
+2. Add the header and footer custom elements to your HTML:
 ```html
-<div id="ioos-header"></div>
+<ioos-header></ioos-header>
 <!-- Your content here -->
-<div id="ioos-footer"></div>
+<ioos-footer></ioos-footer>
 ```
 
 ### Customizing the Menu
@@ -70,6 +70,32 @@ The `variant` attribute selects the header layout:
 | `"compact"` | Only the emblem banner (55px) is visible with a light blue caret; on desktop, hovering slides the blue navigation bar down below the banner, and on mobile, tapping the banner toggles the menu |
 
 > Note: `ioos-banner="off"` is a deprecated alias for `variant="no-banner"` and is kept for backward compatibility. It is ignored when a `variant` is set.
+
+### Theme (`theme`)
+
+The `theme` attribute controls the banner color scheme:
+
+```html
+<ioos-header></ioos-header>
+<ioos-header theme="light"></ioos-header>
+<ioos-header theme="dark"></ioos-header>
+<ioos-header theme="auto"></ioos-header>
+```
+
+| Value | Behavior |
+|-------|----------|
+| *(absent or `"light"`)* | Light banner (default) |
+| `"dark"` | Dark banner background |
+| `"auto"` | **Experimental / limited support.** Detects the host page's theme and live-updates when it changes. See below. |
+
+#### `theme="auto"` (experimental, limited support)
+
+`theme="auto"` currently only detects:
+
+1. `data-theme="light|dark"` on the `<html>` element
+2. The OS/browser level `prefers-color-scheme` media query, as a fallback
+
+Other conventions (e.g. Tailwind's `<html class="dark">`) are **not** detected yet. More detection strategies will be added as neeeded; if your site uses a different convention, please open an issue.
 
 #### Visual comparison
 
