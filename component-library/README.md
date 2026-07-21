@@ -22,11 +22,11 @@ To use these components in your project:
 <script src="https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js">
 ```
 
-2. Add the header and footer containers to your HTML:
+2. Add the header and footer custom elements to your HTML:
 ```html
-<div id="ioos-header"></div>
+<ioos-header></ioos-header>
 <!-- Your content here -->
-<div id="ioos-footer"></div>
+<ioos-footer></ioos-footer>
 ```
 
 ### Customizing the Menu
