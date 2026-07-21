@@ -2,6 +2,15 @@ name: Deploy Component Library
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment target'
+        type: choice
+        required: true
+        default: 'dev'
+        options:
+          - dev
+          - production
 
 jobs:
   deploy:
@@ -28,15 +37,26 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1 
 
+      - name: Set bundle filename for environment
+        run: |
+          if [ "${{ inputs.environment }}" = "production" ]; then
+            echo "BUNDLE_FILENAME=ioos-ui-components.min.js" >> "$GITHUB_ENV"
+          else
+            echo "BUNDLE_FILENAME=ioos-ui-components-dev.min.js" >> "$GITHUB_ENV"
+          fi
+
       - name: Upload files to S3
         run: |
-          aws s3 cp static/ioos-ui-components.min.js s3://ioos-ui-components/ioos-ui-components.min.js
-          aws s3 cp component-library/headerMenuConfig.json s3://ioos-ui-components/headerMenuConfig.json
+          aws s3 cp static/ioos-ui-components.min.js "s3://ioos-ui-components/${BUNDLE_FILENAME}"
+          if [ "${{ inputs.environment }}" = "production" ]; then
+            aws s3 cp component-library/headerMenuConfig.json s3://ioos-ui-components/headerMenuConfig.json
+          fi
 
-      - name: Invalidate CloudFront cache for ioos-ui-components.min.js
+      - name: Invalidate CloudFront cache for component bundle
         run: |
-          aws cloudfront create-invalidation --distribution-id E2206S5B6APN8V --paths "/ioos-ui-components.min.js"
+          aws cloudfront create-invalidation --distribution-id E2206S5B6APN8V --paths "/${BUNDLE_FILENAME}"
 
       - name: Invalidate CloudFront cache for headerMenuConfig.json
+        if: inputs.environment == 'production'
         run: |
           aws cloudfront create-invalidation --distribution-id E2206S5B6APN8V --paths "/headerMenuConfig.json"
