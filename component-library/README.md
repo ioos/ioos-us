@@ -71,6 +71,20 @@ The `variant` attribute selects the header layout:
 
 > Note: `ioos-banner="off"` is a deprecated alias for `variant="no-banner"` and is kept for backward compatibility. It is ignored when a `variant` is set.
 
+### Blue bar logo (`hide-nav-logo`)
+
+The header shows two separate IOOS images: the emblem in the white banner, and the logo in the blue navigation bar. `hide-nav-logo` removes only the blue-bar logo (desktop and mobile). The white banner emblem is unchanged, and the menu items recenter in the bar.
+
+```html
+<ioos-header></ioos-header>
+<ioos-header hide-nav-logo="true"></ioos-header>
+```
+
+| Value | Behavior |
+|-------|----------|
+| *(absent, or any value other than `"true"`)* | Blue-bar logo shown (default) |
+| `"true"` | Blue-bar logo hidden; menu items centered in the bar |
+
 ### Theme (`theme`)
 
 The `theme` attribute controls the banner color scheme:

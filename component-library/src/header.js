@@ -15,7 +15,7 @@ class HeaderComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['menu-config', 'variant', 'theme'];
+        return ['menu-config', 'variant', 'theme', 'hide-nav-logo'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -31,6 +31,9 @@ class HeaderComponent extends HTMLElement {
             this.render();
         }
         if (name === 'theme') {
+            this.render();
+        }
+        if (name === 'hide-nav-logo') {
             this.render();
         }
     }
@@ -75,6 +78,11 @@ class HeaderComponent extends HTMLElement {
         return 'light';
     }
 
+    // Hides only the blue navigation-bar logo. The white banner emblem is unchanged.
+    get hideNavLogo() {
+        return this.getAttribute('hide-nav-logo') === 'true';
+    }
+
     getEmblemSrc() {
         return this.theme === 'dark'
             ? 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem-dark.png'
@@ -104,6 +112,14 @@ class HeaderComponent extends HTMLElement {
                     ${isCompact ? '<span class="compact-caret"></span>' : ''}
                 </div>` : '';
         const headerClass = isCompact ? ' class="compact"' : '';
+        const navLogoHtml = this.hideNavLogo ? '' : `
+                        <a class="navbar-brand mobile" href="https://ioos.us">
+                            <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-us-logo.svg" alt="IOOS logo" />
+                        </a>`;
+        const desktopLogoHtml = this.hideNavLogo ? '' : `
+                                <a class="navbar-brand desktop" href="https://ioos.us">
+                                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-us-logo.svg" alt="IOOS logo" />
+                                </a>`;
         
         this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${headerStyles}</style>
@@ -111,9 +127,7 @@ class HeaderComponent extends HTMLElement {
                 ${bannerHtml}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand mobile" href="https://ioos.us">
-                            <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-us-logo.svg" alt="IOOS logo" />
-                        </a>
+                        ${navLogoHtml}
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -121,9 +135,7 @@ class HeaderComponent extends HTMLElement {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <a class="navbar-brand desktop" href="https://ioos.us">
-                                    <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-us-logo.svg" alt="IOOS logo" />
-                                </a>
+                                ${desktopLogoHtml}
                                 ${this.renderMenu()}
                             </ul>
                         </div>
