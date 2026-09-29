@@ -74,34 +74,34 @@ block body
                 .container
                     #accordion.panel-group
                         .panel.panel-default
-                        .panel-heading
-                            h4.panel-title
-                            a.accordion-toggle(data-toggle='collapse', href='#collapseOne')
-                                | COMT Round 4 – Years 2021-2024
-                        #collapseOne.panel-collapse.collapse.in
-                            p.panel-body
-                                | !{projectThumbs4}
+                            .panel-heading
+                                h4.panel-title
+                                    a.accordion-toggle.collapsed(data-bs-toggle='collapse', href='#collapseOne', aria-expanded='false')
+                                        | COMT Round 4 – Years 2021-2024
+                            #collapseOne.panel-collapse.collapse
+                                .panel-body
+                                    | !{projectThumbs4}
                         .panel.panel-default
-                        .panel-heading
-                            h4.panel-title
-                            a.accordion-toggle(data-toggle='collapse', href='#collapseTwo')
-                                | COMT Round 3 – Years 2018-2022
-                        #collapseTwo.panel-collapse.collapse
-                            p.panel-body
-                                | !{projectThumbs3}
+                            .panel-heading
+                                h4.panel-title
+                                    a.accordion-toggle.collapsed(data-bs-toggle='collapse', href='#collapseTwo', aria-expanded='false')
+                                        | COMT Round 3 – Years 2018-2022
+                            #collapseTwo.panel-collapse.collapse
+                                .panel-body
+                                    | !{projectThumbs3}
                         .panel.panel-default
-                        .panel-heading
-                            h4.panel-title
-                            a.accordion-toggle(data-toggle='collapse', href='#collapseThree')
-                                | COMT Round 2 – Years 2017 – 2018
-                        #collapseThree.panel-collapse.collapse
-                            p.panel-body
-                                | !{projectThumbs2}
+                            .panel-heading
+                                h4.panel-title
+                                    a.accordion-toggle.collapsed(data-bs-toggle='collapse', href='#collapseThree', aria-expanded='false')
+                                        | COMT Round 2 – Years 2017 – 2018
+                            #collapseThree.panel-collapse.collapse
+                                .panel-body
+                                    | !{projectThumbs2}
                         .panel.panel-default
-                        .panel-heading
-                            h4.panel-title
-                            a.accordion-toggle(data-toggle='collapse', href='#collapseFour')
-                                | COMT Round 1 – Years 2013 – 2016
-                        #collapseFour.panel-collapse.collapse
-                            p.panel-body
-                                | !{projectThumbs1}
+                            .panel-heading
+                                h4.panel-title
+                                    a.accordion-toggle.collapsed(data-bs-toggle='collapse', href='#collapseFour', aria-expanded='false')
+                                        | COMT Round 1 – Years 2013 – 2016
+                            #collapseFour.panel-collapse.collapse
+                                .panel-body
+                                    | !{projectThumbs1}

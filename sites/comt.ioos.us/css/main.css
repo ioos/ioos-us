@@ -94,16 +94,32 @@ header {
   margin-top: 15px;
 }
 
-.panel-heading .accordion-toggle:after {
-  /* symbol for "opening" panels */
-  font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-  content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-  float: right;        /* adjust as needed */
-  color: grey;         /* adjust as needed */
+.panel-heading .panel-title {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
+
+.panel-heading .accordion-toggle {
+  position: relative;
+  padding-right: 1.25em;
+}
+
+.panel-heading .accordion-toggle:after {
+  content: "";
+  position: absolute;
+  right: 0.15em;
+  top: 0.35em;
+  width: 0.45em;
+  height: 0.45em;
+  border-top: 2px solid #777;
+  border-right: 2px solid #777;
+  transform: rotate(135deg);
+}
+
 .panel-heading .accordion-toggle.collapsed:after {
-  /* symbol for "collapsed" panels */
-  content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+  top: 0.55em;
+  transform: rotate(45deg);
 }
 
 .panel-heading {
@@ -120,9 +136,53 @@ header {
 }
 
 .accordion-toggle {
+  display: block;
   color: #003087;
   font-size: 20px;
+  font-weight: 400;
   text-decoration: none;
+}
+
+#accordion .panel-body {
+  padding: 15px;
+}
+
+#accordion .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#accordion .thumbnail > .caption {
+  padding: 9px;
+  color: #333;
+}
+
+#accordion .thumbnail h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#accordion .thumbnail .btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#accordion .thumbnail .btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+#accordion .thumbnail .btn-primary:hover {
+  background-color: #286090;
+  border-color: #204d74;
 }
 
 .accordion-toggle:hover {
