@@ -35,6 +35,8 @@
     "fs-extra": "^3.0.1",
     "get-size": "^2.0.2",
     "nodemon": "^3.1.7",
-    "uglify-js": "^3.19.3"
+    "uglify-js": "^3.19.3",
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1"
   }
 }

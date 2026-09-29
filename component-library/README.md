@@ -183,14 +183,15 @@ The component library is deployed using a GitHub Actions workflow. The deploymen
 
 1. Go to the "Actions" tab in the GitHub repository
 2. Select "Deploy Component Library" workflow
-3. Click "Run workflow"
+3. Click "Run workflow" and choose the deployment target: `dev` (default) or `production`
 
 The workflow will:
 - Build the component library using webpack
-- Upload the minified JavaScript file (`ioos-ui-components.min.js`) to S3
-- Upload the menu configuration file (`headerMenuConfig.json`) to S3
-- Invalidate the CloudFront cache for both files
+- Upload the minified JavaScript file to S3 — as `ioos-ui-components.min.js` for `production`, or `ioos-ui-components-dev.min.js` for `dev`
+- Upload the menu configuration file (`headerMenuConfig.json`) to S3 (`production` only)
+- Invalidate the CloudFront cache for the uploaded files
 
 The deployed files will be available at:
-- JavaScript: `https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js`
+- JavaScript (production): `https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components.min.js`
+- JavaScript (dev): `https://dgd6r9iiqa8y9.cloudfront.net/ioos-ui-components-dev.min.js`
 - Menu Config: `https://dgd6r9iiqa8y9.cloudfront.net/headerMenuConfig.json`
