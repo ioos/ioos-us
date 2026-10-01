@@ -24,20 +24,23 @@ $(function() {
     }
   };
   $('[data-toggle="tooltip"]').tooltip();
-  $('.collapse')
-    .collapse('hide')
-    .on('show.bs.collapse', function() {
-      $('#search-data-button').addClass('open');
-      setTimeout(function() {
-        $('#search-input-collapse input').focus();
-      }, 50);
-    })
-  .on('hide.bs.collapse', function() {
-    $('#search-data-button').removeClass('open');
-    setTimeout(function() {
-      $('#search-data-button').blur();
-    }, 50);
-  });
+  var $searchCollapse = $('#search-input-collapse');
+  if ($searchCollapse.length) {
+    $searchCollapse
+      .collapse('hide')
+      .on('show.bs.collapse', function() {
+        $('#search-data-button').addClass('open');
+        setTimeout(function() {
+          $('#search-input-collapse input').focus();
+        }, 50);
+      })
+      .on('hide.bs.collapse', function() {
+        $('#search-data-button').removeClass('open');
+        setTimeout(function() {
+          $('#search-data-button').blur();
+        }, 50);
+      });
+  }
   function searchCatalog () {
     var query = $('input').val().trim();
     if (query !== "") {

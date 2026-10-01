@@ -6,6 +6,12 @@
   font-family: 'KlinicSlabMedium';
   src: url("/fonts/KlinicSlabMedium.otf") format("opentype");
 }
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("/fonts/glyphicons-halflings-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @media (max-width: 768px) {
   header > .container-fluid {
@@ -94,21 +100,28 @@ header {
   margin-top: 15px;
 }
 
+.panel-heading .panel-title {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .panel-heading .accordion-toggle:after {
-  /* symbol for "opening" panels */
-  font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
-  content: "\e114";    /* adjust as needed, taken from bootstrap.css */
-  float: right;        /* adjust as needed */
-  color: grey;         /* adjust as needed */
+  font-family: 'Glyphicons Halflings';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  content: "\e114";
+  float: right;
+  color: grey;
 }
 .panel-heading .accordion-toggle.collapsed:after {
-  /* symbol for "collapsed" panels */
-  content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+  content: "\e080";
 }
 
 .panel-heading {
-  /* background-color: #efefef; */
   padding: 30px;
+  border-top: 1px solid #f4f4f4;
 }
 
 .panel {
@@ -120,9 +133,54 @@ header {
 }
 
 .accordion-toggle {
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #003087;
   font-size: 20px;
+  font-weight: 400;
   text-decoration: none;
+}
+
+#accordion .panel-body {
+  padding: 15px;
+}
+
+#accordion .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#accordion .thumbnail > .caption {
+  padding: 9px;
+  color: #333;
+}
+
+#accordion .thumbnail h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#accordion .thumbnail .btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+#accordion .thumbnail .btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+#accordion .thumbnail .btn-primary:hover {
+  background-color: #286090;
+  border-color: #204d74;
 }
 
 .accordion-toggle:hover {
@@ -823,7 +881,8 @@ nav.nav-list {
     padding: 4px 20px;
     font-size: 13px;
     font-weight: 500;
-    color: #767676
+    color: #767676;
+    text-decoration: none;
 }
 
 .sidebar .nav > li > a:focus,
@@ -875,7 +934,8 @@ nav.nav-list {
 }
 
 @media (min-width: 992px) {
-  #sidenav.affix {
+  #sidenav.affix,
+  #sidenav.affix-top {
     width: 212.5px;
   }
 }
@@ -890,7 +950,12 @@ nav.nav-list {
 }
 
 #main-container.comt .row:last-of-type h2 {
+  margin-top: 20px;
   margin-bottom: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
   text-align: left;
   color: #003087;
 }
@@ -953,8 +1018,136 @@ nav.nav-list {
 
 /*  BEGIN comt/projects */
 
-#main-container.comt-projects {
+#main-container.comt-projects,
+#main-container.comt-dataset {
   margin-top: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  #main-container.comt-projects.container,
+  #main-container.comt-dataset.container {
+    width: 750px;
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-container.comt-projects.container,
+  #main-container.comt-dataset.container {
+    width: 970px;
+    max-width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-container.comt-projects.container,
+  #main-container.comt-dataset.container {
+    width: 1170px;
+    max-width: 1170px;
+  }
+}
+
+#main-container.comt-projects > .row,
+#main-container.comt-dataset > .row {
+  --bs-gutter-x: 30px;
+}
+
+#main-container.comt-projects .sidebar > nav > ul.nav {
+  display: block;
+}
+
+#main-container.comt-projects .sidebar .nav > li {
+  display: block;
+  width: 100%;
+}
+
+#main-container.comt-projects .breadcrumb,
+#main-container.comt-dataset .breadcrumb {
+  display: block;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+#main-container.comt-projects .breadcrumb > li,
+#main-container.comt-dataset .breadcrumb > li {
+  display: inline-block;
+}
+
+#main-container.comt-projects .breadcrumb > li + li::before,
+#main-container.comt-dataset .breadcrumb > li + li::before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+
+#main-container.comt-projects .breadcrumb > .active,
+#main-container.comt-dataset .breadcrumb > .active {
+  color: #777;
+}
+
+#main-container.comt-projects .breadcrumb a,
+#main-container.comt-projects .col-md-9 a,
+#main-container.comt-dataset a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+#main-container.comt-projects .breadcrumb a:hover,
+#main-container.comt-projects .breadcrumb a:focus,
+#main-container.comt-projects .col-md-9 a:hover,
+#main-container.comt-projects .col-md-9 a:focus,
+#main-container.comt-dataset a:hover,
+#main-container.comt-dataset a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+#main-container.comt-projects .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  font-size: 36px;
+  line-height: 1.1;
+  border-bottom: 1px solid #eee;
+}
+
+#main-container.comt-projects h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+#main-container.comt-projects h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#main-container.comt-projects p {
+  margin: 0 0 10px;
+}
+
+#main-container.comt-projects .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#main-container.comt-projects .img-thumbnail {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 div.anchor {
@@ -1004,13 +1197,60 @@ img[alt="Modeled Hypoxia for Summer 2015"] {
   min-height: 225px;
 }
 
+.comt-dataset h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 500;
+  color: #333;
+}
+
+.comt-dataset p {
+  margin: 0 0 10px;
+}
+
+.comt-dataset .dl-horizontal::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .comt-dataset .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .comt-dataset .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+
 .comt-dataset dd > ul {
-  list-style  : none;
+  list-style: none;
   padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .comt-dataset span.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
   font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 10px;
 }
 
 .file-access {
