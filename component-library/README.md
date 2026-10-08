@@ -85,6 +85,21 @@ The header shows two separate IOOS images: the emblem in the white banner, and t
 | *(absent, or any value other than `"true"`)* | Blue-bar logo shown (default) |
 | `"true"` | Blue-bar logo hidden; menu items centered in the bar |
 
+### Blue bar height (`nav-height`)
+
+`nav-height` sets the height of the blue navigation bar. Menu labels stay vertically centered in that bar. The white emblem banner is unchanged. A bare number is pixels. `px`, `rem`, and `em` are also accepted. Omitted, empty, or invalid values keep the default 50px bar.
+
+```html
+<ioos-header></ioos-header>
+<ioos-header nav-height="72"></ioos-header>
+<ioos-header nav-height="4rem"></ioos-header>
+```
+
+| Value | Behavior |
+|-------|----------|
+| *(absent, empty, or not a length)* | Blue bar stays 50px (default) |
+| `"72"`, `"72px"`, `"4rem"`, `"3em"` | Blue bar uses that height; desktop menu labels are vertically centered |
+
 ### Theme (`theme`)
 
 The `theme` attribute controls the banner color scheme:

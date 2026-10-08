@@ -33,7 +33,7 @@ header[data-theme="dark"] {
 .navbar.navbar-expand-lg {
     background-color: #013087;
     padding: unset;
-    height: 50px;
+    height: var(--nav-height, 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,10 +59,12 @@ header[data-theme="dark"] {
     color: #55d6f8;
     font-size: 18px;
     text-transform: uppercase;
-    line-height: 50px;
+    line-height: var(--nav-height, 50px);
 }
 
 .navbar-brand {
+    display: flex;
+    align-items: center;
     padding-top: .3125em;
     padding-bottom: .3125em;
     margin-right: 1em;
@@ -70,7 +72,11 @@ header[data-theme="dark"] {
 }
 
 .navbar-brand>img {
+    /* Cap at the size used by the default 50px bar. A shorter bar can shrink it. */
     height: -webkit-fill-available;
+    max-height: calc(50px - 0.625em);
+    width: auto;
+    min-height: 0;
     margin-right: 1em;
 }
 
@@ -170,6 +176,9 @@ header[data-theme="dark"] {
         height: auto;
         margin-top: 8em;
         background-color: #013087;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        line-height: 50px;
     }
     .navbar-toggler {
         margin-right: .5em;

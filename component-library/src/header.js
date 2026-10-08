@@ -15,7 +15,7 @@ class HeaderComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['menu-config', 'variant', 'theme', 'hide-nav-logo'];
+        return ['menu-config', 'variant', 'theme', 'hide-nav-logo', 'nav-height'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -34,6 +34,9 @@ class HeaderComponent extends HTMLElement {
             this.render();
         }
         if (name === 'hide-nav-logo') {
+            this.render();
+        }
+        if (name === 'nav-height') {
             this.render();
         }
     }
@@ -83,6 +86,14 @@ class HeaderComponent extends HTMLElement {
         return this.getAttribute('hide-nav-logo') === 'true';
     }
 
+    // CSS length for the blue bar. A bare number is pixels. Invalid values stay at the default.
+    get navHeight() {
+        const attr = (this.getAttribute('nav-height') || '').trim();
+        const match = attr.match(/^((?:\d*\.)?\d+)(px|rem|em)?$/);
+        if (!match) return '';
+        return match[2] ? attr : `${match[1]}px`;
+    }
+
     getEmblemSrc() {
         return this.theme === 'dark'
             ? 'https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-emblem-dark.png'
@@ -112,6 +123,7 @@ class HeaderComponent extends HTMLElement {
                     ${isCompact ? '<span class="compact-caret"></span>' : ''}
                 </div>` : '';
         const headerClass = isCompact ? ' class="compact"' : '';
+        const headerStyle = this.navHeight ? ` style="--nav-height: ${this.navHeight}"` : '';
         const navLogoHtml = this.hideNavLogo ? '' : `
                         <a class="navbar-brand mobile" href="https://ioos.us">
                             <img src="https://dgd6r9iiqa8y9.cloudfront.net/images/ioos-us-logo.svg" alt="IOOS logo" />
@@ -123,7 +135,7 @@ class HeaderComponent extends HTMLElement {
         
         this.shadowRoot.innerHTML = `
             <style>${bootstrapStyles} ${headerStyles}</style>
-            <header${headerClass} data-theme="${this.theme}">
+            <header${headerClass}${headerStyle} data-theme="${this.theme}">
                 ${bannerHtml}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">

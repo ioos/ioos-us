@@ -47,10 +47,17 @@
             Falling back to the OS/browser prefers-color-scheme.
             Example: <ioos-header theme="auto"></ioos-header>
 
+        nav-height="72"
+            Sets the blue navigation bar height. A bare number is pixels; px, rem, and
+            em are also accepted. Menu labels stay vertically centered in the bar.
+            Omitted or invalid values keep the default 50px bar. The white emblem
+            banner is unchanged.
+            Example: <ioos-header nav-height="72"></ioos-header>
+
         ioos-banner="off"
             Deprecated alias for variant="no-banner". Ignored when a variant is set.
     -->
-    <ioos-header theme="auto"></ioos-header>
+    <ioos-header theme="auto" nav-height="72" variant="compact"></ioos-header>
 
 
     <div style="height: 1500px;">
